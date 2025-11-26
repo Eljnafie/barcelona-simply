@@ -1,1186 +1,1080 @@
 
-import { Translation, Language } from './types';
-import React from 'react';
+  import { Translation, Language } from './types';
+  import React from 'react';
 
-export const TRANSLATIONS: Record<Language, Translation> = {
-  en: {
-    nav: {
-      home: "Home",
-      services: "Services",
-      about: "About Us",
-      pricing: "Pricing",
-      contact: "Contact",
-      blog: "Blog",
-      appointment: "Book Appointment",
-    },
-    hero: {
-      title: "Your Trusted Guide in Barcelona",
-      subtitle: "Premium assistance, medical accompaniment, and VIP concierge tailored for visitors from the Gulf.",
-      cta: "Book via WhatsApp",
-    },
-    servicesPage: {
-      title: "Our Services for Visitors in Barcelona",
-      subtitle: "We provide a range of services to make your visit to Barcelona seamless — medical appointments, administrative assistance, study registration, residency matters, and VIP services.",
-      buttons: {
-        book: "Book via WhatsApp",
-        more: "More Information"
-      }
-    },
-    services: {
-      items: {
-        medical: { 
-          title: "Medical Accompaniment Service", 
-          cardDesc: "Professional accompaniment to medical appointments and hospitals.",
-          heroImage: "https://picsum.photos/1200/600?image=10",
-          summary: "We prioritize your health and comfort. Our team schedules appointments with top specialists (Teknon, Quirón, etc.), accompanies you to the clinic, and ensures accurate translation of all medical information.",
-          whoFor: "Patients traveling for treatment, check-ups, or surgery.",
-          benefits: ["Access to top clinics", "Accurate medical translation", "Peace of mind", "Privacy assured"],
-          features: ["Appointment scheduling with specialists", "In-person interpretation during consultations", "Medical report translation assistance", "Pharmacy and medication guidance"],
-          processTitle: "Medical Process",
-          process: [
-            { step: "Consultation", desc: "Tell us your medical needs or preferred specialization." },
-            { step: "Booking", desc: "We find the best doctor and schedule the appointment." },
-            { step: "Accompaniment", desc: "We meet you at the clinic and translate everything." }
-          ],
-          faq: [
-             { q: "Do you offer medical advice?", a: "No, we facilitate communication only. We are not doctors." },
-             { q: "Which hospitals do you work with?", a: "We work with all major private and public hospitals in Barcelona." }
-          ]
-        },
-        admin: { 
-          title: "Administrative & Government Support", 
-          cardDesc: "Simplifying Spanish bureaucracy for you.",
-          heroImage: "https://picsum.photos/1200/600?image=1068",
-          summary: "Spanish bureaucracy can be overwhelming. We handle the paperwork for NIE numbers, bank accounts, census registration, and other official procedures so you don't have to.",
-          whoFor: "Newcomers, property buyers, and long-term residents.",
-          benefits: ["Time-saving", "Error-free paperwork", "Fast appointments", "Legal compliance"],
-          features: ["NIE & TIE application support", "Census registration (Empadronamiento)", "Bank account opening assistance", "Official document translation coordination"],
-          processTitle: "Our Process",
-          process: [
-            { step: "Assessment", desc: "We review your current status and required documents." },
-            { step: "Preparation", desc: "We prepare all forms and schedule appointments." },
-            { step: "Submission", desc: "We accompany you to the government office." }
-          ],
-          faq: [
-            { q: "Can you guarantee the NIE?", a: "We guarantee correct procedure, but final approval depends on the authorities." }
-          ]
-        },
-        study: { 
-          title: "Study & Residency Assistance", 
-          cardDesc: "Supporting students and families with education and legal status.",
-          heroImage: "https://picsum.photos/1200/600?image=101",
-          summary: "We help students from the Gulf settle in Barcelona, assisting with university enrollment, student visas, TIE cards, and finding suitable accommodation.",
-          whoFor: "University students and families moving for education.",
-          benefits: ["University placement", "Visa renewal support", "Housing assistance", "Local orientation"],
-          features: ["University enrollment assistance", "Student visa renewal support", "Health insurance arrangement", "Housing search for students"],
-          processTitle: "Steps to Settle",
-          process: [
-            { step: "Planning", desc: "We identify your university and housing needs." },
-            { step: "Paperwork", desc: "We compile all documents for the student visa." },
-            { step: "Settlement", desc: "We help you get your TIE card upon arrival." }
-          ],
-          faq: [
-             { q: "Do you help with finding accommodation?", a: "Yes, we have a network of trusted student housing providers." }
-          ]
-        },
-        vip: { 
-          title: "VIP Concierge Service (Gulf Edition)", 
-          cardDesc: "Exclusive luxury services for high-profile clients.",
-          heroImage: "https://picsum.photos/1200/600?image=1074",
-          summary: "Designed for our most discerning clients. We manage luxury transport, 5-star accommodation, private shopping, and exclusive experiences with absolute discretion.",
-          whoFor: "VIP visitors, diplomats, and business travelers.",
-          benefits: ["24/7 Priority support", "Luxury fleet access", "NDA Privacy", "Exclusive access"],
-          features: ["Luxury airport transfers", "Private chauffeur service", "Exclusive restaurant & club reservations", "Personal shopping assistant"],
-          processTitle: "VIP Experience",
-          process: [
-            { step: "Request", desc: "Send us your dates and preferences." },
-            { step: "Itinerary", desc: "We build a custom luxury itinerary for you." },
-            { step: "Execution", desc: "Enjoy 24/7 support during your stay." }
-          ],
-          faq: [
-            { q: "Is this service available 24/7?", a: "Yes, our VIP clients have access to round-the-clock support." }
-          ]
-        },
-        trans: { 
-          title: "Translation & Interpretation", 
-          cardDesc: "Arabic-Spanish-English interpretation for meetings.",
-          heroImage: "https://picsum.photos/1200/600?image=103",
-          summary: "Bridging the language gap in business meetings, legal appointments, or daily life. Our native speakers ensure clear communication.",
-          whoFor: "Business professionals and individuals needing language support.",
-          benefits: ["Native fluency", "Cultural understanding", "On-site support", "Immediate availability"],
-          features: ["In-person interpretation", "Business meeting support", "Property viewing assistance", "General daily life translation"],
-          processTitle: "Booking",
-          process: [
-            { step: "Schedule", desc: "Tell us when and where you need us." },
-            { step: "Meet", desc: "Our interpreter meets you at the location." },
-            { step: "Support", desc: "We bridge the communication gap instantly." }
-          ],
-          faq: [
-            { q: "Is this a sworn translation?", a: "No, this is for interpretation and non-official documents." }
-          ]
-        },
-        family: {
-          title: "Family Relocation & Setup Support",
-          cardDesc: "Helping families move and settle in Barcelona comfortably.",
-          heroImage: "https://picsum.photos/1200/600?image=1012",
-          summary: "Moving your family to Barcelona? We help with school selection, housing, utility setup, and neighborhood orientation to ensure a smooth transition.",
-          whoFor: "Families relocating for work or lifestyle.",
-          benefits: ["School admission help", "Utility setup", "Family-friendly housing", "Neighborhood guide"],
-          features: ["School search & visits", "Utility contracts (Internet/Water)", "Furniture shopping", "Nanny/Housekeeper search"],
-          processTitle: "Relocation Steps",
-          process: [
-             { step: "Consult", desc: "Understanding your family needs." },
-             { step: "Search", desc: "Finding schools and homes." },
-             { step: "Setup", desc: "Getting everything ready before you arrive." }
-          ],
-          faq: [
-             { q: "Do you help with schools?", a: "Yes, we help with international and local school enrollments." }
-          ]
+  export const TRANSLATIONS: Record<Language, Translation> = {
+    en: {
+      nav: {
+        home: "Home",
+        services: "Our Services",
+        about: "Who We Are",
+        pricing: "Packages",
+        contact: "Contact",
+        blog: "Guide & Blog",
+        appointment: "Book Appointment",
+      },
+      hero: {
+        title: "Your Premium Gateway to Barcelona",
+        subtitle: "Specialized medical escort, administrative assistance, and VIP concierge for GCC and Arabic-speaking visitors. Experience Barcelona with total peace of mind.",
+        cta: "Book VIP Consultation",
+        ctaSecondary: "View Services",
+        trustBadge: "Trusted by 500+ Families from GCC",
+      },
+      servicesPage: {
+        title: "Elite Assistance Services in Barcelona",
+        subtitle: "From top-tier medical appointments to complex residency procedures, we handle the details so you don't have to.",
+        buttons: {
+          book: "Book via WhatsApp",
+          more: "Service Details"
         }
       },
-    },
-    howItWorks: {
-      title: "How It Works",
-      steps: [
-        { title: "Contact Us", desc: "Reach out via WhatsApp or our contact form to discuss your needs." },
-        { title: "Plan Your Visit", desc: "We create a tailored plan for your medical, study, or tourism trip." },
-        { title: "Arrival & Support", desc: "We meet you upon arrival and accompany you to all appointments." },
-        { title: "Relax & Enjoy", desc: "Focus on your goals while we handle the logistics and language." }
-      ]
-    },
-    whyUs: {
-      title: "Why Choose Barcelona Simply?",
-      items: {
-        trust: { title: "Arabic-Speaking Experts", desc: "Native Arabic speakers with deep experience in Gulf culture and needs." },
-        lang: { title: "Privacy & Discretion", desc: "We guarantee full confidentiality for all our clients." },
-        exp: { title: "Premium Solutions", desc: "Tailored assistance for hospitals, universities, and government offices." },
-      }
-    },
-    testimonials: {
-      title: "Client Testimonials",
-      subtitle: "Read what our clients have to say about their experience with us.",
-      items: [
-        { name: "A.K.", location: "Dubai", text: "Barcelona Simply made my first visit worry-free. Highly recommended!" },
-        { name: "M.S.", location: "Riyadh", text: "They helped me register at my university and manage my residency smoothly." },
-        { name: "F.H.", location: "Abu Dhabi", text: "Professional, friendly, and very reliable. I felt fully supported during all appointments." },
-        { name: "L.T.", location: "Qatar", text: "Great VIP concierge service. Airport pickup and hotel arrangements were perfect." },
-      ]
-    },
-    homeAppointment: {
-      title: "Book in 3 Simple Steps",
-      subtitle: "Schedule your consultation or service request online efficiently.",
-      steps: {
-        step1: "Choose Service",
-        step2: "Select Time",
-        step3: "Confirm",
+      services: {
+        items: {
+          medical: { 
+            title: "Medical Concierge & Escort", 
+            cardDesc: "Access Barcelona's top specialists with a personal medical interpreter.",
+            heroImage: "https://picsum.photos/1200/600?image=10",
+            summary: "Barcelona is a global hub for medical excellence. We bridge the gap between you and top hospitals (Teknon, Sant Joan de Déu, Barraquer). We manage appointments, provide medical translation, and ensure your comfort throughout the treatment journey.",
+            whoFor: "Patients from GCC/Middle East seeking treatment, surgery, or check-ups.",
+            benefits: ["Priority appointments with top doctors", "Accurate medical translation (Arabic/Spanish)", "Hospital admission management", "Post-treatment follow-up"],
+            features: ["Scheduling with Top Specialists", "On-site Medical Interpretation", "Report Translation & Legalization", "Pharmacy Assistance"],
+            processTitle: "Your Medical Journey",
+            process: [
+              { step: "Consultation", desc: "We understand your medical case and prefered specialty." },
+              { step: "Coordination", desc: "We secure appointments with leading professors/doctors." },
+              { step: "Accompaniment", desc: "Your personal assistant attends all visits for translation." }
+            ],
+            faq: [
+              { q: "Which hospitals do you partner with?", a: "We work with Teknon, Quirón, Dexeus, and Barraquer among others." },
+              { q: "Is medical translation accurate?", a: "Yes, our assistants are experienced in medical terminology." }
+            ]
+          },
+          admin: { 
+            title: "Legal & Administrative Assistance", 
+            cardDesc: "Fast-track your NIE, TIE, and residency paperwork.",
+            heroImage: "https://picsum.photos/1200/600?image=1068",
+            summary: "Spanish bureaucracy is complex. We simplify it. Whether you need a NIE number, a Golden Visa, or simply to open a bank account, our local experts handle the appointments and paperwork on your behalf.",
+            whoFor: "Investors, new residents, and property buyers.",
+            benefits: ["No language barrier", "Correct document preparation", "Priority appointment strategies", "Stress-free processing"],
+            features: ["NIE & TIE Applications", "Golden Visa Support", "Empadronamiento (Census)", "Bank Account Opening"],
+            processTitle: "Administrative Process",
+            process: [
+              { step: "Document Review", desc: "We check your papers to ensure success." },
+              { step: "Appointment", desc: "We secure the notoriously difficult 'Cita Previa'." },
+              { step: "Execution", desc: "We accompany you to the police or foreign office." }
+            ],
+            faq: [
+              { q: "How fast can I get a NIE?", a: "With our help, we aim for the earliest available slots, often weeks faster than standard." }
+            ]
+          },
+          study: { 
+            title: "Student Residency & University Support", 
+            cardDesc: "Complete support for Arab students: Visas, Housing, & Enrollment.",
+            heroImage: "https://picsum.photos/1200/600?image=101",
+            summary: "Moving to Barcelona for studies? We help students from Saudi Arabia, Kuwait, Qatar, and beyond secure their student visas, find safe housing, and navigate university registration.",
+            whoFor: "University students and their parents.",
+            benefits: ["Secure legal status", "Safe accommodation findings", "University liaison", "Parental peace of mind"],
+            features: ["Student Visa Renewal", "TIE Card Processing", "University Enrollment Help", "Safe Housing Search"],
+            processTitle: "Student Settlement",
+            process: [
+              { step: "Visa Strategy", desc: "Reviewing requirements for your specific consulate." },
+              { step: "Housing", desc: "Finding student-friendly apartments or residences." },
+              { step: "Legalization", desc: "Obtaining the TIE card upon arrival." }
+            ],
+            faq: [
+              { q: "Do you help with private universities?", a: "Yes, we assist with ESADE, IESE, UB, and more." }
+            ]
+          },
+          vip: { 
+            title: "VIP & Luxury Concierge", 
+            cardDesc: "Exclusive lifestyle management for high-profile visitors.",
+            heroImage: "https://picsum.photos/1200/600?image=1074",
+            summary: "For our most discerning clients, we offer a full-service luxury experience. From private chauffeurs and security to exclusive shopping and property management, we ensure discretion and excellence.",
+            whoFor: "VIP families, diplomats, and investors.",
+            benefits: ["Absolute privacy (NDA)", "24/7 Dedicated Assistant", "Luxury Logistics", "Exclusive Access"],
+            features: ["Private Chauffeur & Transport", "5-Star Hotel/Villa Booking", "Personal Shopping", "Property Management"],
+            processTitle: "The VIP Standard",
+            process: [
+              { step: "Profiling", desc: "Understanding your specific lifestyle needs." },
+              { step: "Itinerary", desc: "Crafting a minute-by-minute luxury plan." },
+              { step: "24/7 Support", desc: "A dedicated manager is always one call away." }
+            ],
+            faq: [
+              { q: "Is confidentiality guaranteed?", a: "Absolutely. We are accustomed to handling high-profile clients with NDAs." }
+            ]
+          },
+          trans: { 
+            title: "Business Interpretation", 
+            cardDesc: "Professional Arabic-Spanish interpretation for meetings.",
+            heroImage: "https://picsum.photos/1200/600?image=103",
+            summary: "Do not let language be a barrier to your business success. Our interpreters bridge the gap in real estate negotiations, legal meetings, and corporate events.",
+            whoFor: "Businessmen, investors, and corporate delegations.",
+            benefits: ["Cultural nuance understanding", "Business terminology", "Confidentiality", "Professional representation"],
+            features: ["Meeting Interpretation", "Real Estate Negotiation Support", "Legal Translation Coordination", "Trade Fair Assistance"],
+            processTitle: "Booking",
+            process: [
+              { step: "Briefing", desc: "We review the context of your meeting." },
+              { step: "Attendance", desc: "Our interpreter supports you on-site." },
+              { step: "Follow-up", desc: "Assistance with post-meeting summary translation." }
+            ],
+            faq: [
+              { q: "Is this sworn translation?", a: "We coordinate sworn translation for documents, but this service is for oral interpretation." }
+            ]
+          },
+          family: {
+            title: "Family Relocation",
+            cardDesc: "Seamless relocation services for families moving to Spain.",
+            heroImage: "https://picsum.photos/1200/600?image=1012",
+            summary: "Moving your family to Barcelona involves many details. We handle school search, utility setup, neighborhood orientation, and domestic help recruitment.",
+            whoFor: "Families relocating for work or lifestyle.",
+            benefits: ["School admission guidance", "Family-friendly housing", "Utility setup", "Soft landing"],
+            features: ["International School Search", "Utility Contracts", "Domestic Staff Recruitment", "Neighborhood Guide"],
+            processTitle: "Relocation Steps",
+            process: [
+              { step: "Needs Analysis", desc: "School curriculum and lifestyle preferences." },
+              { step: "Home Search", desc: "Viewing properties that fit family needs." },
+              { step: "Settling In", desc: "Setting up internet, water, and bank accounts." }
+            ],
+            faq: [
+              { q: "Can you help with British/American schools?", a: "Yes, we have relationships with all major international schools." }
+            ]
+          }
+        },
       },
-      cta: "Start Booking Now"
-    },
-    ctaSection: {
-      title: "Ready for a Seamless Experience?",
-      subtitle: "Join our happy clients and enjoy Barcelona without the stress.",
-      buttonText: "Book Your Service via WhatsApp",
-    },
-    pricing: {
-      title: "Premium Assistance Packages",
-      subtitle: "Transparent, professional, and confidential services tailored for our Gulf clients. We speak your language and understand your needs.",
-      cta: "Book This Package",
-      bookWhatsapp: "Book via WhatsApp",
-      packages: {
-        vipGulf: {
-          title: "VIP Gulf Pack",
-          price: "€650",
-          unit: "Family Assistance",
-          desc: "For individuals or families needing premium accompaniment.",
-          features: [
-            "Airport coordination & luxury pickup",
-            "Full-day Personal Assistant (Male/Female)",
-            "Medical Accompaniment (2 Visits)",
-            "Administrative Support",
-            "Translation (up to 10 pages)",
-            "School/University Visits",
-            "Luxury Apartment Viewing",
-            "Priority WhatsApp Support",
-            "Full Confidentiality"
-          ]
-        },
-        medical: {
-          title: "Premium Medical Pack",
-          price: "€320",
-          unit: "Medical Trip",
-          desc: "For medical visits, examinations, and clinic accompaniment.",
-          features: [
-            "Booking in top clinics (Teknon, Quirón...)",
-            "Arabic-speaking accompaniment",
-            "Medical translation",
-            "Follow-up and reports",
-            "Support for 2 appointment days",
-            "VIP Privacy Protocol"
-          ]
-        },
-        luxury: {
-          title: "Luxury Stay Pack",
-          price: "€900",
-          unit: "3 Days",
-          desc: "For VIP short stays requiring full management.",
-          features: [
-            "3 Full Days of Personal Assistance",
-            "Hotel & Apartment Coordination",
-            "Private Driver Coordination",
-            "Premium Shopping Assistance",
-            "Clinic Support",
-            "Tourism & Lifestyle Guidance",
-            "Arabic Support",
-            "24/7 Priority Communication"
-          ]
-        },
-        study: {
-           title: "Study & Residency Pack",
-           price: "€450",
-           unit: "Student Setup",
-           desc: "For students and families needing school/university & residency setup.",
-           features: [
-              "University Enrollment Support",
-              "Student Visa Paperwork",
-              "TIE Card Application",
-              "Housing Search Assistance",
-              "Bank Account Setup",
-              "Local Orientation"
-           ]
-        }
-      },
-      alaCarte: {
-        title: "Individual Service Prices (À La Carte)",
-        subtitle: "Flexible options tailored to your specific needs.",
-        items: [
-          { name: "Medical Appointment Accompaniment", price: "€120", desc: "Per visit" },
-          { name: "Administrative Procedures Support", price: "€100", desc: "Per procedure" },
-          { name: "Residency / NIE Guidance", price: "€80", desc: "Consultation" },
-          { name: "University or School Visit Assistance", price: "€150", desc: "Per visit" },
-          { name: "Document Translation (Arabic–Spanish)", price: "From €20", desc: "Per page" },
-          { name: "Hourly Personal Assistant", price: "€40/hr", desc: "Min. 2 hours" },
-          { name: "VIP Shopping Assistance", price: "€60/hr", desc: "Luxury guide" },
-          { name: "Document Preparation & Consulting", price: "From €50", desc: "Per file" }
+      howItWorks: {
+        title: "A Seamless Experience",
+        steps: [
+          { title: "Consultation", desc: "Contact us via WhatsApp. We listen to your specific needs." },
+          { title: "Proposal", desc: "We offer a clear plan and transparent pricing package." },
+          { title: "Arrival", desc: "We meet you in Barcelona and handle all procedures." },
+          { title: "Completion", desc: "We ensure every task is finished to your satisfaction." }
         ]
       },
-      faq: {
-        title: "Frequently Asked Questions",
+      whyUs: {
+        title: "Why GCC Clients Trust Us",
+        subtitle: "We combine local Spanish expertise with deep understanding of Arab culture.",
+        items: {
+          trust: { title: "Trust & Transparency", desc: "Clear pricing, no hidden fees, and honest advice." },
+          lang: { title: "Arabic & Spanish Native", desc: "We speak your language and the local language fluently." },
+          exp: { title: "Local Credibility", desc: "Years of experience dealing with Catalan bureaucracy." },
+          privacy: { title: "Privacy Focused", desc: "Discretion is our priority for VIP and medical clients." }
+        }
+      },
+      testimonials: {
+        title: "Client Stories",
+        subtitle: "Real feedback from our valued clients.",
         items: [
-          { q: "Is the service legal?", a: "Yes, we are a registered entity in Spain ensuring full legal compliance and confidentiality." },
-          { q: "What is included in accompaniment?", a: "It includes physical presence, translation, form filling, and guidance during appointments." },
-          { q: "Are female assistants available?", a: "Yes, we can provide female assistants upon request to ensure comfort and privacy for families." },
-          { q: "Can you coordinate private drivers?", a: "Absolutely. We work with trusted luxury transport providers for your convenience." },
-          { q: "How does payment work?", a: "We accept credit cards, bank transfers, and cash. A deposit may be required for large packages." },
-          { q: "Privacy policy for Gulf clients?", a: "Privacy is our core value. We sign non-disclosure agreements (NDAs) for VIP clients." }
+          { name: "Mr. Al-Mansour", location: "Riyadh, KSA", text: "The medical accompaniment was exceptional. They handled the hospital translation perfectly.", type: "Medical Patient" },
+          { name: "Sarah B.", location: "Dubai, UAE", text: "Getting my student residency was a nightmare until I found Barcelona Simply. Highly recommended.", type: "Student" },
+          { name: "Khalid", location: "Doha, Qatar", text: "Professional, punctual, and very discrete. The VIP concierge service exceeded expectations.", type: "VIP Client" },
+          { name: "Fatima", location: "Kuwait", text: "They helped my family settle, find a school, and get our papers sorted in record time.", type: "Family Relocation" },
         ]
       },
-      finalCta: {
-        title: "Plan Your Stay With Experts",
-        subtitle: "Contact our Arabic-speaking team now — We'll plan every step of your stay in Barcelona.",
-        button: "Contact via WhatsApp"
-      }
-    },
-    contact: {
-      title: "Book Your Appointment",
-      subtitle: "Follow the steps below to schedule your service. It only takes a minute.",
-      whatsapp: "Chat on WhatsApp",
-    },
-    appointmentWizard: {
-      steps: {
-        service: "Service",
-        datetime: "Date & Time",
-        details: "Details"
+      homeAppointment: {
+        title: "Book Your Service in Seconds",
+        subtitle: "Don't wait for bureaucracy. Secure your assistance now.",
+        steps: {
+          step1: "Select Service",
+          step2: "Choose Date",
+          step3: "Confirm via WhatsApp",
+        },
+        cta: "Start Booking"
       },
-      labels: {
-        selectService: "Select the service you need",
-        selectDate: "Pick a preferred date",
-        selectTime: "Preferred time slot",
-        name: "Full Name",
-        email: "Email Address",
-        phone: "Phone Number (with country code)",
-        message: "Any specific requirements?"
+      ctaSection: {
+        title: "Planning Your Trip to Barcelona?",
+        subtitle: "Ensure a hassle-free experience with our professional assistance.",
+        buttonText: "Contact Us on WhatsApp",
       },
-      buttons: {
-        next: "Next Step",
-        back: "Back",
-        confirm: "Confirm Appointment",
-        finish: "Done"
-      },
-      success: {
-        title: "Request Received!",
-        message: "We have received your appointment request. Our team will contact you via WhatsApp or Email shortly to confirm."
-      }
-    },
-    blog: {
-      title: "Barcelona Insights & Guides",
-      subtitle: "Expert advice, tips, and guides for Arabic visitors, students, and patients in Barcelona.",
-      readMore: "Read Article",
-      categories: {
-        all: "All",
-        medical: "Medical",
-        admin: "Administrative",
-        study: "Study",
-        vip: "VIP & Travel",
-        tips: "Tips",
-      },
-      posts: [
-        {
-          id: '1',
-          slug: 'how-to-book-medical-appointment-barcelona',
-          title: 'How to Book a Specialist Medical Appointment in Barcelona',
-          excerpt: 'A comprehensive guide for international patients on navigating the Spanish healthcare system and seeing a specialist.',
-          category: 'medical',
-          image: 'https://picsum.photos/800/600?image=1059',
-          date: 'Oct 15, 2023',
-          author: 'Barcelona Simply Team',
-          content: {
-            intro: 'Barcelona is home to some of the best medical facilities in Europe. However, for non-Spanish speakers, booking an appointment can be a challenge. This guide breaks down the process.',
-            sections: [
-              { title: 'Why Choose Barcelona for Medical Care?', content: 'Barcelona offers world-class hospitals like Teknon, Quirón, and Hospital Clínic. The quality of care is high, and costs are often lower than in the US or UK.' },
-              { title: 'Step 1: Choose Public vs. Private', content: 'For international visitors, private healthcare is the standard route. It offers faster access to specialists and often has multilingual staff. We recommend private clinics for speed and comfort.' },
-              { title: 'Step 2: Finding the Right Specialist', content: 'Research is key. Look for doctors who specialize in your specific condition. Our team maintains a database of Arabic-speaking or English-speaking specialists.' },
-              { title: 'Step 3: Documents You Need', content: ['Passport or ID', 'Travel Insurance or Private Health Insurance policy', 'Previous medical records (translated if possible)'] }
-            ],
-            conclusion: 'Booking an appointment doesn’t have to be stressful. Barcelona Simply can handle the booking, translation, and accompaniment for you.'
+      pricing: {
+        title: "Transparent Service Packages",
+        subtitle: "Choose the level of support that fits your needs. No hidden costs.",
+        cta: "Select Plan",
+        bookWhatsapp: "Book via WhatsApp",
+        categories: {
+          medical: {
+            title: "Medical Accompaniment",
+            subtitle: "Professional support for your health journey.",
+            tiers: [
+              { name: "Basic Visit", price: "€150", desc: "Single Appointment", features: ["1 Medical Appointment", "2 Hours Accompaniment", "On-site Translation", "Pharmacy Assistance"] },
+              { name: "Standard Care", price: "€400", desc: "Full Check-up Support", features: ["3 Medical Appointments", "Translation of Reports", "Test Coordination", "Follow-up Call"], highlight: true },
+              { name: "VIP Medical", price: "€950", desc: "Comprehensive Care", features: ["Unlimited Appointments (1 Week)", "Hospital Admission Support", "24/7 On-Call Support", "Private Transport Coordination"] }
+            ]
+          },
+          admin: {
+            title: "Administrative & Legal",
+            subtitle: "Fast-track your paperwork.",
+            tiers: [
+              { name: "Essential", price: "€150", desc: "Single Procedure", features: ["NIE Appointment Booking", "Form Filling", "1 Office Visit Accompaniment", "Tax Form Preparation"] },
+              { name: "Residency Bundle", price: "€550", desc: "Complete Process", features: ["Visa Application Support", "TIE Card Processing", "Empadronamiento", "Bank Account Opening", "Legal Translation Coordination"], highlight: true }
+            ]
+          },
+          student: {
+            title: "Student Packages",
+            subtitle: "Settle in for your studies.",
+            tiers: [
+              { name: "Settlement Pack", price: "€450", desc: "Arrival Support", features: ["TIE/Residency Card", "University Registration Help", "Housing Search Assistance", "Sim Card & Bank Setup"] }
+            ]
+          },
+          vip: {
+            title: "VIP Concierge",
+            subtitle: "Exclusive lifestyle management.",
+            tiers: [
+              { name: "Daily Assistant", price: "€300", desc: "Per Day (8h)", features: ["Personal Assistant", "Shopping & Reservations", "Transport Management", "On-Demand Support"] },
+              { name: "Weekly Platinum", price: "€1800", desc: "Full Week Support", features: ["Dedicated 24/7 Manager", "Full Itinerary Planning", "Priority Reservations", "Crisis Management"] }
+            ]
           }
         },
-        {
-          id: '2',
-          slug: 'getting-nie-number-spain',
-          title: 'The Ultimate Guide to Getting Your NIE Number',
-          excerpt: 'Understanding the NIE application process is crucial for anyone planning to stay in Spain for study or residency.',
-          category: 'admin',
-          image: 'https://picsum.photos/800/600?image=1076',
-          date: 'Sep 28, 2023',
-          author: 'Legal Desk',
-          content: {
-            intro: 'The NIE (Número de Identidad de Extranjero) is your identification number in Spain. You need it for almost everything: opening a bank account, signing a lease, or setting up internet.',
-            sections: [
-              { title: 'Who Needs a NIE?', content: 'Anyone who has economic, professional, or social interests in Spain. This includes students, property buyers, and long-term residents.' },
-              { title: 'Step 1: The Appointment (Cita Previa)', content: 'Getting an appointment at the immigration office is notoriously difficult. Appointments are released at specific times and vanish quickly. Persistence is key.' },
-              { title: 'Step 2: The Paperwork (Modelo EX-15)', content: 'You must fill out form EX-15 correctly in Spanish. You also need to pay the tax (Modelo 790 Code 012) at a bank before your meeting.' },
-              { title: 'Common Mistakes to Avoid', content: ['Showing up without a printed appointment confirmation', 'Forgetting copies of all passport pages', 'Not having the tax paid in advance'] }
-            ],
-            conclusion: 'Navigating Spanish bureaucracy takes patience. If you are struggling to get an appointment, our administrative team can assist you.'
-          }
+        alaCarte: {
+          title: "Individual Services",
+          items: [
+            { name: "Hourly Assistance", price: "€50/hr", desc: "Minimum 3 hours" },
+            { name: "Airport Pickup Coordination", price: "€80", desc: "Luxury car arrangement" },
+            { name: "Property Viewing", price: "€100", desc: "Per viewing with translation" }
+          ]
         },
-        {
-          id: '3',
-          slug: 'luxury-shopping-guide-barcelona',
-          title: 'VIP Guide: Luxury Shopping on Passeig de Gràcia',
-          excerpt: 'Discover the best luxury boutiques and hidden gems in Barcelona’s most exclusive shopping district.',
-          category: 'vip',
-          image: 'https://picsum.photos/800/600?image=1060',
-          date: 'Nov 02, 2023',
-          author: 'Concierge Team',
-          content: {
-             intro: 'Passeig de Gràcia is not just a street; it is the heartbeat of luxury in Barcelona. From Chanel to Gucci, here is your guide to shopping in style.',
-             sections: [
-                { title: 'The Golden Mile', content: 'The stretch between Plaça Catalunya and Diagonal is known as the Golden Mile. It hosts flagship stores of major luxury brands.' },
-                { title: 'Tax-Free Shopping', content: 'As a non-EU resident, you are entitled to a VAT refund (TAX FREE). Don’t forget to ask for the tax-free form at checkout. You can claim up to 21% back at the airport.' },
-                { title: 'Private Shoppers', content: 'For a more exclusive experience, many boutiques offer private viewing rooms. Our VIP concierge can arrange private sessions where the store is closed for you.' }
-             ],
-             conclusion: 'Enjoy the finest fashion Barcelona has to offer. Contact us to arrange a private chauffeur for your shopping day.'
-          }
+        faq: {
+          title: "Frequently Asked Questions",
+          items: [
+            { q: "Do you handle the visa application directly?", a: "We assist with the entire file preparation and appointments, but the final submission is personal." },
+            { q: "Can you assist with family medical trips?", a: "Yes, we specialize in family medical tourism, coordinating appointments for multiple family members." },
+            { q: "Is payment required upfront?", a: "We usually require a 50% deposit to secure appointments and begin work." }
+          ]
+        },
+        finalCta: {
+          title: "Ready to Start?",
+          subtitle: "Let us handle the details while you enjoy Barcelona.",
+          button: "Chat on WhatsApp"
         }
-      ],
-      cta: {
-        title: "Need help with this topic?",
-        text: "Our team is ready to assist you immediately.",
-        button: "Contact via WhatsApp"
+      },
+      contact: {
+        title: "Get in Touch",
+        subtitle: "We are ready to assist you. Contact us via WhatsApp for the fastest response.",
+        whatsapp: "Chat on WhatsApp",
+        formTitle: "Send us a Request"
+      },
+      appointmentWizard: {
+        steps: {
+          service: "Service",
+          datetime: "Date",
+          details: "Details"
+        },
+        labels: {
+          selectService: "Select Service Type",
+          selectDate: "Preferred Date",
+          selectTime: "Time Preference",
+          name: "Full Name",
+          email: "Email",
+          phone: "Phone (with country code)",
+          message: "Additional Details"
+        },
+        buttons: {
+          next: "Next",
+          back: "Back",
+          confirm: "Confirm Request",
+          finish: "Done"
+        },
+        success: {
+          title: "Request Sent!",
+          message: "We will contact you shortly to confirm your appointment."
+        }
+      },
+      blog: {
+        title: "Barcelona Guides & Insights",
+        subtitle: "Expert advice on residency, medical care, and luxury travel in Barcelona.",
+        readMore: "Read Article",
+        categories: {
+          all: "All",
+          medical: "Medical Tourism",
+          admin: "Legal & Residency",
+          study: "Study in Spain",
+          vip: "VIP Lifestyle",
+          tips: "Travel Tips",
+        },
+        posts: [
+          {
+            id: '1',
+            slug: 'medical-tourism-barcelona-guide',
+            title: 'Medical Tourism in Barcelona: A Guide for GCC Patients',
+            excerpt: 'Why Barcelona is a top destination for medical treatment, covering top hospitals like Teknon and Quirón.',
+            category: 'medical',
+            image: 'https://picsum.photos/800/600?image=1059',
+            date: 'Nov 15, 2023',
+            author: 'Medical Team',
+            seoTitle: 'Medical Tourism Barcelona: Guide for Arab Patients',
+            metaDesc: 'Complete guide to medical treatment in Barcelona for GCC citizens. Best hospitals, visa requirements, and accompaniment services.',
+            content: {
+              intro: 'Barcelona is ranked among the top medical destinations globally. For patients from Saudi Arabia, UAE, and Qatar, it offers high-quality healthcare at competitive rates.',
+              sections: [
+                { title: 'Top Hospitals', content: 'Hospitals like Teknon Medical Center and Hospital Clínic are world-renowned for oncology, cardiology, and ophthalmology.' },
+                { title: 'The Language Barrier', content: 'While doctors speak English, nursing staff often do not. Having a medical interpreter is crucial for comfort and accuracy.' },
+                { title: 'Visa for Medical Treatment', content: 'We assist in gathering medical reports required for the Spanish Medical Visa application.' }
+              ],
+              conclusion: 'Ensure your health journey is smooth with our professional accompaniment services.'
+            }
+          },
+          {
+            id: '2',
+            slug: 'nie-tie-residency-spain',
+            title: 'NIE vs TIE: Everything You Need to Know',
+            excerpt: 'Understanding the difference between NIE and TIE is the first step to residency in Spain.',
+            category: 'admin',
+            image: 'https://picsum.photos/800/600?image=1076',
+            date: 'Nov 10, 2023',
+            author: 'Legal Team',
+            seoTitle: 'How to get NIE and TIE in Barcelona - Step by Step',
+            metaDesc: 'Learn the difference between NIE and TIE and how to obtain them in Barcelona. Professional administrative assistance.',
+            content: {
+              intro: 'The NIE is a number, the TIE is the physical card. This distinction confuses many newcomers.',
+              sections: [
+                { title: 'What is the NIE?', content: 'The Foreigner Identity Number. You need it for taxes, buying property, or accepting an inheritance.' },
+                { title: 'What is the TIE?', content: 'The Foreigner Identity Card. It proves your legal residence in Spain (Student, Work, Non-Lucrative).' },
+                { title: 'How we help', content: 'We secure the appointment (Cita Previa), fill the forms (EX-15/EX-17), and pay the taxes (Modelo 790) for you.' }
+              ],
+              conclusion: 'Don\'t let bureaucracy stop you. Contact us for fast NIE processing.'
+            }
+          },
+          {
+            id: '3',
+            slug: 'luxury-halal-tourism-barcelona',
+            title: 'Luxury & Halal Tourism in Barcelona',
+            excerpt: 'A VIP guide to halal dining, private shopping, and luxury stays in Catalonia.',
+            category: 'vip',
+            image: 'https://picsum.photos/800/600?image=1048',
+            date: 'Oct 25, 2023',
+            author: 'Concierge Team',
+            seoTitle: 'Luxury Halal Tourism Barcelona - VIP Guide',
+            metaDesc: 'Discover the best halal fine dining and luxury shopping experiences in Barcelona. Tailored for Gulf visitors.',
+            content: {
+              intro: 'Barcelona offers a blend of European luxury and accommodating services for Muslim travelers.',
+              sections: [
+                { title: 'Halal Fine Dining', content: 'We can reserve private dining rooms in top restaurants that cater to halal dietary requirements.' },
+                { title: 'Private Shopping', content: 'Experience Passeig de Gràcia with a personal shopper and private viewings in boutiques like Chanel and Hermes.' },
+                { title: 'Accommodation', content: 'We recommend 5-star hotels like the Mandarin Oriental or private luxury villas in Pedralbes.' }
+              ],
+              conclusion: 'Experience the best of Barcelona with our VIP concierge.'
+            }
+          }
+        ],
+        cta: {
+          title: "Need personalized advice?",
+          text: "Our experts are ready to answer your specific questions via WhatsApp.",
+          button: "Contact Us Now"
+        }
+      },
+      chat: {
+        title: "Barcelona Support",
+        placeholder: "Type your question...",
+        send: "Send",
+        welcome: "Welcome to Barcelona Simply. How can we assist with your visit today?",
+        whatsapp: "Chat on WhatsApp",
+        agent_unavailable: "Please contact us on WhatsApp for immediate assistance."
       }
     },
-    chat: {
-      title: "Barcelona Assistant",
-      placeholder: "Ask about Barcelona or our services...",
-      send: "Send",
-      welcome: "Hello! I am your Barcelona Simply AI assistant. How can I help you today?",
-      whatsapp: "Chat on WhatsApp",
-      agent_unavailable: "Agents are currently busy. Connect via WhatsApp for immediate help."
+    fr: {
+      nav: {
+        home: "Accueil",
+        services: "Services",
+        about: "À Propos",
+        pricing: "Tarifs",
+        contact: "Contact",
+        blog: "Guides",
+        appointment: "Rendez-vous",
+      },
+      hero: {
+        title: "Votre Partenaire de Confiance à Barcelone",
+        subtitle: "Assistance médicale, administrative et conciergerie VIP pour les visiteurs francophones et du Golfe.",
+        cta: "Consultation Gratuite",
+        ctaSecondary: "Voir les Services",
+        trustBadge: "Confiance de +500 familles",
+      },
+      servicesPage: {
+        title: "Services d'Assistance Premium",
+        subtitle: "Nous facilitons vos démarches médicales, administratives et votre installation à Barcelone.",
+        buttons: {
+          book: "Réserver par WhatsApp",
+          more: "Détails"
+        }
+      },
+      services: {
+        items: {
+          medical: { 
+            title: "Accompagnement Médical", 
+            cardDesc: "Interprétariat médical et prise de rendez-vous.",
+            heroImage: "https://picsum.photos/1200/600?image=10",
+            summary: "Nous vous accompagnons dans les meilleurs hôpitaux de Barcelone. Nous gérons la prise de rendez-vous, la traduction médicale français-espagnol-arabe et le suivi post-opératoire.",
+            whoFor: "Patients internationaux cherchant l'excellence médicale.",
+            benefits: ["Rendez-vous prioritaires", "Traduction précise", "Gestion admission", "Suivi dossier"],
+            features: ["Rendez-vous Spécialistes", "Interprète sur place", "Traduction Rapports", "Aide Pharmacie"],
+            processTitle: "Votre Parcours Santé",
+            process: [
+              { step: "Consultation", desc: "Analyse de vos besoins médicaux." },
+              { step: "Coordination", desc: "Réservation auprès des professeurs." },
+              { step: "Accompagnement", desc: "Présence physique lors des visites." }
+            ],
+            faq: [
+              { q: "Travaillez-vous avec le secteur privé ?", a: "Oui, principalement avec Teknon, Quirón et Dexeus." }
+            ]
+          },
+          admin: { 
+            title: "Assistance Administrative", 
+            cardDesc: "Obtention NIE, TIE et Résidence simplifiée.",
+            heroImage: "https://picsum.photos/1200/600?image=1068",
+            summary: "Évitez les tracas administratifs. Nous gérons vos demandes de NIE, recensements (empadronamiento) et ouvertures de comptes bancaires.",
+            whoFor: "Nouveaux résidents et investisseurs.",
+            benefits: ["Gain de temps", "Dossiers conformes", "Rendez-vous rapides", "Sérénité"],
+            features: ["Obtention NIE/TIE", "Visa Investisseur", "Recensement Mairie", "Compte Bancaire"],
+            processTitle: "Processus Administratif",
+            process: [
+              { step: "Audit", desc: "Vérification des documents." },
+              { step: "Rendez-vous", desc: "Prise de Cita Previa rapide." },
+              { step: "Dépôt", desc: "Accompagnement au bureau des étrangers." }
+            ],
+            faq: [
+              { q: "Garantissez-vous le NIE ?", a: "Nous garantissons la conformité du dossier et l'accompagnement." }
+            ]
+          },
+          study: { 
+            title: "Pack Étudiant & Université", 
+            cardDesc: "Visa, Logement et Inscription universitaire.",
+            heroImage: "https://picsum.photos/1200/600?image=101",
+            summary: "Idéal pour les étudiants marocains et du Golfe. Nous gérons le renouvellement de visa, la carte TIE et la recherche de logement étudiant.",
+            whoFor: "Étudiants internationaux.",
+            benefits: ["Statut légal assuré", "Logement sécurisé", "Support inscription", "Tranquillité parents"],
+            features: ["Renouvellement Visa", "Carte de Séjour TIE", "Inscription Fac", "Recherche Appartement"],
+            processTitle: "Installation Étudiant",
+            process: [
+              { step: "Visa", desc: "Analyse des requis consulaires." },
+              { step: "Logement", desc: "Visites d'appartements étudiants." },
+              { step: "Légalisation", desc: "Obtention de la carte TIE." }
+            ],
+            faq: [
+              { q: "Aidez-vous pour les universités privées ?", a: "Oui, nous assistons pour TBS, ESADE, etc." }
+            ]
+          },
+          vip: { 
+            title: "Conciergerie VIP", 
+            cardDesc: "Services de luxe et discrétion absolue.",
+            heroImage: "https://picsum.photos/1200/600?image=1074",
+            summary: "Gestion lifestyle complète : chauffeurs privés, sécurité, shopping exclusif et gestion immobilière pour nos clients privilégiés.",
+            whoFor: "VIP et investisseurs.",
+            benefits: ["Confidentialité", "Assistant 24/7", "Logistique Luxe", "Accès Exclusif"],
+            features: ["Chauffeur Privé", "Hôtels 5 Étoiles", "Personal Shopping", "Gestion Propriété"],
+            processTitle: "Standard VIP",
+            process: [
+              { step: "Profilage", desc: "Analyse de vos besoins." },
+              { step: "Itinéraire", desc: "Planification sur mesure." },
+              { step: "Support 24/7", desc: "Disponible à tout moment." }
+            ],
+            faq: [
+              { q: "Proposez-vous la sécurité ?", a: "Oui, nous pouvons organiser une sécurité rapprochée." }
+            ]
+          },
+          trans: { 
+            title: "Interprétariat Affaires", 
+            cardDesc: "Traduction Arabe-Espagnol-Français pour réunions.",
+            heroImage: "https://picsum.photos/1200/600?image=103",
+            summary: "Facilitez vos affaires en Espagne avec nos interprètes professionnels pour vos négociations et réunions.",
+            whoFor: "Hommes d'affaires et délégations.",
+            benefits: ["Maîtrise culturelle", "Vocabulaire business", "Confidentialité", "Professionnalisme"],
+            features: ["Interprétariat Réunion", "Négociation Immo", "Traduction Légale", "Salons Pro"],
+            processTitle: "Réservation",
+            process: [
+              { step: "Briefing", desc: "Contexte de la réunion." },
+              { step: "Présence", desc: "Support sur site." },
+              { step: "Suivi", desc: "Résumé et traduction." }
+            ],
+            faq: [
+              { q: "Est-ce une traduction jurée ?", a: "Non, c'est de l'interprétariat oral d'affaires." }
+            ]
+          },
+          family: {
+            title: "Relocalisation Famille",
+            cardDesc: "Installation complète pour familles expatriées.",
+            heroImage: "https://picsum.photos/1200/600?image=1012",
+            summary: "Nous gérons l'inscription scolaire, les contrats d'eau/électricité et l'orientation pour une installation en douceur.",
+            whoFor: "Familles s'installant à Barcelone.",
+            benefits: ["Orientation scolaire", "Logement famille", "Installation services", "Douceur d'arrivée"],
+            features: ["Recherche École", "Contrats Services", "Personnel Maison", "Guide Quartier"],
+            processTitle: "Étapes",
+            process: [
+              { step: "Besoins", desc: "Analyse scolarité et vie." },
+              { step: "Recherche", desc: "Visites ciblées." },
+              { step: "Installation", desc: "Mise en service maison." }
+            ],
+            faq: [
+              { q: "Aidez-vous avec le Lycée Français ?", a: "Oui, nous connaissons bien les écoles internationales." }
+            ]
+          }
+        },
+      },
+      howItWorks: {
+        title: "Comment Ça Marche",
+        steps: [
+          { title: "Contact", desc: "Écrivez-nous sur WhatsApp." },
+          { title: "Proposition", desc: "Plan clair et devis transparent." },
+          { title: "Arrivée", desc: "Accueil et gestion des démarches." },
+          { title: "Finalisation", desc: "Suivi jusqu'à satisfaction." }
+        ]
+      },
+      whyUs: {
+        title: "Pourquoi Nous Choisir",
+        subtitle: "Expertise locale et compréhension culturelle.",
+        items: {
+          trust: { title: "Confiance", desc: "Transparence totale et honnêteté." },
+          lang: { title: "Polyglotte", desc: "Français, Arabe, Espagnol, Anglais." },
+          exp: { title: "Expertise", desc: "Maîtrise de la bureaucratie locale." },
+          privacy: { title: "Discrétion", desc: "Priorité absolue pour nos clients." }
+        }
+      },
+      testimonials: {
+        title: "Témoignages",
+        subtitle: "Ce que nos clients disent de nous.",
+        items: [
+          { name: "Karim M.", location: "Casablanca, Maroc", text: "Service impeccable pour mon NIE et l'installation de mon entreprise.", type: "Entrepreneur" },
+          { name: "Famille Benali", location: "Paris/Alger", text: "Ils ont trouvé l'école parfaite pour nos enfants. Merci !", type: "Relocalisation" },
+        ]
+      },
+      homeAppointment: {
+        title: "Réservez en 3 Clics",
+        subtitle: "Ne perdez pas de temps avec l'administration.",
+        steps: {
+          step1: "Service",
+          step2: "Date",
+          step3: "Confirmation WhatsApp",
+        },
+        cta: "Réserver"
+      },
+      ctaSection: {
+        title: "Besoin d'assistance immédiate ?",
+        subtitle: "Notre équipe est disponible pour vous aider.",
+        buttonText: "Contact WhatsApp",
+      },
+      pricing: {
+        title: "Nos Forfaits",
+        subtitle: "Des tarifs clairs pour un service premium.",
+        cta: "Choisir",
+        bookWhatsapp: "Réserver",
+        categories: {
+          medical: {
+            title: "Médical",
+            subtitle: "Santé & Sérénité",
+            tiers: [
+              { name: "Visite Simple", price: "€150", desc: "1 Rendez-vous", features: ["1 Rdv Médical", "2h Accompagnement", "Traduction sur place", "Aide Pharmacie"] },
+              { name: "Pack Soins", price: "€400", desc: "Suivi Complet", features: ["3 Rdv Médicaux", "Traduction Rapports", "Coordination tests", "Suivi téléphonique"], highlight: true },
+              { name: "VIP Santé", price: "€950", desc: "Prise en charge totale", features: ["Rdv Illimités (1 sem)", "Support Hospitalisation", "Astreinte 24/7", "Gestion Transport"] }
+            ]
+          },
+          admin: {
+            title: "Administratif",
+            subtitle: "Papiers en règle",
+            tiers: [
+              { name: "Essentiel", price: "€150", desc: "Procédure unique", features: ["Rdv NIE", "Remplissage Formulaires", "Accompagnement Police", "Taxes"] },
+              { name: "Pack Résidence", price: "€550", desc: "Installation", features: ["Support Visa", "Carte TIE", "Empadronamiento", "Banque", "Traduction Assermentée (coord)"], highlight: true }
+            ]
+          },
+          student: {
+            title: "Étudiant",
+            subtitle: "Pack Installation",
+            tiers: [
+              { name: "Pack Étudiant", price: "€450", desc: "Arrivée sereine", features: ["Carte TIE", "Inscription Fac", "Aide Logement", "Sim & Banque"] }
+            ]
+          },
+          vip: {
+            title: "VIP",
+            subtitle: "Sur Mesure",
+            tiers: [
+              { name: "Assistant Jour", price: "€300", desc: "Par Jour (8h)", features: ["Assistant Personnel", "Shopping & Réservations", "Transport", "Support immédiat"] },
+              { name: "Semaine Platinum", price: "€1800", desc: "Support Semaine", features: ["Manager dédié 24/7", "Planning complet", "Accès Prioritaire", "Gestion Crise"] }
+            ]
+          }
+        },
+        alaCarte: {
+          title: "À la Carte",
+          items: [
+            { name: "Assistance Horaire", price: "€50/h", desc: "Min 3 heures" },
+            { name: "Accueil Aéroport", price: "€80", desc: "Voiture confort" },
+            { name: "Visite Immobilière", price: "€100", desc: "Par visite + traduction" }
+          ]
+        },
+        faq: {
+          title: "FAQ",
+          items: [
+            { q: "Faites-vous les visas ?", a: "Nous préparons tout le dossier, le dépôt est personnel." },
+            { q: "Paiement ?", a: "Acompte de 50% pour démarrer la mission." }
+          ]
+        },
+        finalCta: {
+          title: "On commence ?",
+          subtitle: "Laissez-nous gérer les détails.",
+          button: "Discuter sur WhatsApp"
+        }
+      },
+      contact: {
+        title: "Contactez-nous",
+        subtitle: "Réponse rapide via WhatsApp.",
+        whatsapp: "WhatsApp",
+        formTitle: "Formulaire"
+      },
+      appointmentWizard: {
+        steps: {
+          service: "Service",
+          datetime: "Date",
+          details: "Détails"
+        },
+        labels: {
+          selectService: "Type de Service",
+          selectDate: "Date Souhaitée",
+          selectTime: "Heure",
+          name: "Nom",
+          email: "Email",
+          phone: "Téléphone",
+          message: "Message"
+        },
+        buttons: {
+          next: "Suivant",
+          back: "Retour",
+          confirm: "Confirmer",
+          finish: "Fini"
+        },
+        success: {
+          title: "Envoyé !",
+          message: "Nous vous recontactons très vite."
+        }
+      },
+      blog: {
+        title: "Blog & Conseils",
+        subtitle: "Guides pratiques pour Barcelone.",
+        readMore: "Lire",
+        categories: {
+          all: "Tout",
+          medical: "Médical",
+          admin: "Administratif",
+          study: "Études",
+          vip: "VIP",
+          tips: "Conseils",
+        },
+        posts: [
+          {
+            id: '1',
+            slug: 'medical-tourism-barcelona-guide',
+            title: 'Se soigner à Barcelone : Guide Complet',
+            excerpt: 'Les meilleurs hôpitaux et comment s\'organiser.',
+            category: 'medical',
+            image: 'https://picsum.photos/800/600?image=1059',
+            date: '15 Nov, 2023',
+            author: 'Équipe Médicale',
+            seoTitle: 'Tourisme Médical Barcelone : Guide Francophone',
+            metaDesc: 'Tout savoir sur les soins médicaux à Barcelone. Hôpitaux, interprètes et démarches.',
+            content: {
+              intro: 'Barcelone est une destination phare pour la santé en Europe.',
+              sections: [
+                { title: 'Hôpitaux', content: 'Teknon, Clinique et Quirón sont au sommet.' },
+                { title: 'Langue', content: 'Nos accompagnateurs francophones sont essentiels.' }
+              ],
+              conclusion: 'Contactez-nous pour organiser votre séjour médical.'
+            }
+          },
+          {
+            id: '2',
+            slug: 'nie-tie-residency-spain',
+            title: 'NIE et TIE : Quelle différence ?',
+            excerpt: 'Comprendre les documents essentiels en Espagne.',
+            category: 'admin',
+            image: 'https://picsum.photos/800/600?image=1076',
+            date: '10 Nov, 2023',
+            author: 'Juridique',
+            seoTitle: 'Obtenir NIE et TIE à Barcelone',
+            metaDesc: 'Guide pratique pour obtenir son NIE et sa carte de séjour TIE à Barcelone.',
+            content: {
+              intro: 'Le NIE est un numéro, la TIE est la carte physique.',
+              sections: [
+                { title: 'Le NIE', content: 'Obligatoire pour tout acte économique.' },
+                { title: 'La TIE', content: 'Preuve de résidence pour les non-européens.' }
+              ],
+              conclusion: 'Nous gérons les rendez-vous pour vous.'
+            }
+          }
+        ],
+        cta: {
+          title: "Une question ?",
+          text: "Écrivez-nous.",
+          button: "Contact"
+        }
+      },
+      chat: {
+        title: "Support",
+        placeholder: "Question...",
+        send: "Envoyer",
+        welcome: "Bonjour, comment pouvons-nous vous aider ?",
+        whatsapp: "WhatsApp",
+        agent_unavailable: "Contactez-nous sur WhatsApp."
+      }
+    },
+    ar: {
+      nav: {
+        home: "الرئيسية",
+        services: "خدماتنا",
+        about: "من نحن",
+        pricing: "الباقات",
+        contact: "اتصل بنا",
+        blog: "دليل برشلونة",
+        appointment: "حجز موعد",
+      },
+      hero: {
+        title: "رفيقك الموثوق في برشلونة",
+        subtitle: "خدمات المرافقة الطبية، والإجراءات الإدارية، والكونسيرج الفاخر خصيصاً للزوار من دول الخليج. نضمن لك الراحة والخصوصية التامة.",
+        cta: "استشارة VIP مجانية",
+        ctaSecondary: "تصفح الخدمات",
+        trustBadge: "ثقة أكثر من 500 عائلة خليجية",
+      },
+      servicesPage: {
+        title: "خدمات النخبة في برشلونة",
+        subtitle: "من المواعيد الطبية مع كبار الأطباء إلى إجراءات الإقامة المعقدة، نحن نهتم بكل التفاصيل لتستمتع برحلتك.",
+        buttons: {
+          book: "حجز عبر واتساب",
+          more: "تفاصيل الخدمة"
+        }
+      },
+      services: {
+        items: {
+          medical: { 
+            title: "المرافقة الطبية والعلاجية", 
+            cardDesc: "الوصول لأفضل الأطباء مع مترجم طبي خاص.",
+            heroImage: "https://picsum.photos/1200/600?image=10",
+            summary: "برشلونة وجهة عالمية للتميز الطبي. نحن نكون جسر التواصل بينك وبين أفضل المستشفيات (تيكنون، كيرون، باراكير). ندير المواعيد، نوفر الترجمة الطبية الفورية، ونضمن راحتك طوال رحلة العلاج.",
+            whoFor: "المرضى من دول الخليج الباحثين عن العلاج أو الفحوصات.",
+            benefits: ["مواعيد أولوية مع كبار الاستشاريين", "ترجمة طبية دقيقة (عربي/إسباني)", "إدارة إجراءات الدخول للمستشفى", "متابعة ما بعد العلاج"],
+            features: ["حجز مواعيد مع البروفيسورات", "مترجم فوري في العيادة", "ترجمة وتصديق التقارير", "توفير الأدوية من الصيدلية"],
+            processTitle: "رحلتك العلاجية",
+            process: [
+              { step: "الاستشارة", desc: "نفهم حالتك الطبية والتخصص المطلوب." },
+              { step: "التنسيق", desc: "نؤكد المواعيد مع أفضل الأطباء." },
+              { step: "المرافقة", desc: "مساعدك الشخصي يرافقك للترجمة والاهتمام." }
+            ],
+            faq: [
+              { q: "ما هي المستشفيات التي تتعاملون معها؟", a: "نتعامل مع تيكنون، كيرون، ديكسيوس، وباراكير وغيرها." },
+              { q: "هل الترجمة الطبية دقيقة؟", a: "نعم، مساعدونا ذوو خبرة في المصطلحات الطبية." }
+            ]
+          },
+          admin: { 
+            title: "الخدمات الإدارية والقانونية", 
+            cardDesc: "تخليص معاملات NIE والإقامة والفيزا.",
+            heroImage: "https://picsum.photos/1200/600?image=1068",
+            summary: "البيروقراطية الإسبانية معقدة، لكننا نبسطها لك. سواء كنت تحتاج رقم NIE، أو الفيزا الذهبية، أو فتح حساب بنكي، خبراؤنا المحليون يديرون المواعيد والأوراق نيابة عنك.",
+            whoFor: "المستثمرون، المقيمون الجدد، وملاك العقارات.",
+            benefits: ["بدون حاجز لغة", "تجهيز صحيح للملفات", "استراتيجيات للحصول على مواعيد", "إجراءات خالية من التوتر"],
+            features: ["طلبات NIE و TIE", "دعم الفيزا الذهبية", "تسجيل السكن (Empadronamiento)", "فتح الحسابات البنكية"],
+            processTitle: "الإجراءات الإدارية",
+            process: [
+              { step: "مراجعة المستندات", desc: "ندقق أوراقك لضمان القبول." },
+              { step: "الموعد", desc: "نحجز الموعد الحكومي (Cita Previa) الصعب." },
+              { step: "التنفيذ", desc: "نرافقك للشرطة أو مكتب الأجانب." }
+            ],
+            faq: [
+              { q: "كم يستغرق الحصول على NIE؟", a: "نحاول دائماً الحصول على أقرب المواعيد، غالباً أسرع بأسابيع من المعتاد." }
+            ]
+          },
+          study: { 
+            title: "دعم الطلاب والجامعات", 
+            cardDesc: "دعم كامل للطلاب العرب: فيزا، سكن، وتسجيل.",
+            heroImage: "https://picsum.photos/1200/600?image=101",
+            summary: "هل تنتقل للدراسة في برشلونة؟ نساعد الطلاب من السعودية، الكويت، قطر، وغيرها في تأمين فيزا الطالب، العثور على سكن آمن، وإتمام التسجيل الجامعي.",
+            whoFor: "طلاب الجامعات وأولياء أمورهم.",
+            benefits: ["وضع قانوني سليم", "سكن آمن وموثوق", "تواصل مع الجامعة", "راحة بال للأهل"],
+            features: ["تجديد فيزا الطالب", "اصدار بطاقة TIE", "المساعدة في القبول الجامعي", "البحث عن سكن طلابي"],
+            processTitle: "استقرار الطالب",
+            process: [
+              { step: "استراتيجية الفيزا", desc: "مراجعة متطلبات القنصلية." },
+              { step: "السكن", desc: "إيجاد شقق أو سكن طلابي مناسب." },
+              { step: "الإقامة", desc: "استخراج بطاقة TIE بعد الوصول." }
+            ],
+            faq: [
+              { q: "هل تساعدون في الجامعات الخاصة؟", a: "نعم، نساعد في ESADE, IESE, UB وغيرها." }
+            ]
+          },
+          vip: { 
+            title: "كونسيرج VIP فاخر", 
+            cardDesc: "إدارة أسلوب حياة حصري لكبار الشخصيات.",
+            heroImage: "https://picsum.photos/1200/600?image=1074",
+            summary: "لعملائنا الأكثر تميزاً، نقدم تجربة فاخرة متكاملة. من السائقين الخاصين والحماية الشخصية إلى التسوق الحصري وإدارة الممتلكات، نضمن السرية والتميز.",
+            whoFor: "العائلات VIP، الدبلوماسيون، والمستثمرون.",
+            benefits: ["خصوصية تامة (عقود سرية)", "مساعد شخصي 24/7", "لوجستيات فاخرة", "وصول حصري"],
+            features: ["سائق خاص ونقل", "حجوزات فنادق 5 نجوم", "تسوق شخصي", "إدارة العقارات"],
+            processTitle: "معايير VIP",
+            process: [
+              { step: "فهم الاحتياجات", desc: "تحليل متطلبات أسلوب حياتك." },
+              { step: "البرنامج", desc: "تصميم خطة فاخرة دقيقة." },
+              { step: "دعم 24/7", desc: "مدير مخصص رهن إشارتك دائماً." }
+            ],
+            faq: [
+              { q: "هل تضمنون السرية؟", a: "بكل تأكيد. نحن معتادون على التعامل مع كبار الشخصيات بعقود سرية." }
+            ]
+          },
+          trans: { 
+            title: "الترجمة التجارية للأعمال", 
+            cardDesc: "ترجمة فورية احترافية للاجتماعات والمفاوضات.",
+            heroImage: "https://picsum.photos/1200/600?image=103",
+            summary: "لا تدع اللغة تكون عائقاً لنجاح أعمالك. مترجمونا يغطون الفجوة في المفاوضات العقارية، الاجتماعات القانونية، والفعاليات التجارية.",
+            whoFor: "رجال الأعمال، المستثمرون، والوفود.",
+            benefits: ["فهم الفروق الثقافية", "مصطلحات تجارية", "سرية", "تمثيل احترافي"],
+            features: ["ترجمة الاجتماعات", "دعم المفاوضات العقارية", "تنسيق الترجمة القانونية", "مرافقة المعارض"],
+            processTitle: "الحجز",
+            process: [
+              { step: "التحضير", desc: "مراجعة سياق اجتماعك." },
+              { step: "الحضور", desc: "مترجمنا يدعمك في الموقع." },
+              { step: "المتابعة", desc: "المساعدة في ترجمة ملخص الاجتماع." }
+            ],
+            faq: [
+              { q: "هل هذه ترجمة محلفة؟", a: "نحن ننسق الترجمة المحلفة للأوراق، لكن هذه الخدمة للترجمة الفورية الشفهية." }
+            ]
+          },
+          family: {
+            title: "خدمات انتقال العائلات",
+            cardDesc: "خدمات انتقال سلسة للعائلات القادمة إلى إسبانيا.",
+            heroImage: "https://picsum.photos/1200/600?image=1012",
+            summary: "نقل عائلتك لبرشلونة يتطلب الكثير من التفاصيل. نحن نتولى البحث عن المدارس، تركيب الخدمات، التوجيه في الأحياء، وتوظيف المساعدة المنزلية.",
+            whoFor: "العائلات المنتقلة للعمل أو الإقامة.",
+            benefits: ["توجيه للمدارس المناسبة", "سكن عائلي", "تركيب الخدمات", "استقرار سهل"],
+            features: ["البحث عن مدارس دولية", "عقود الخدمات", "توظيف العمالة المنزلية", "دليل الأحياء"],
+            processTitle: "خطوات الانتقال",
+            process: [
+              { step: "تحليل الاحتياجات", desc: "المناهج الدراسية ونمط الحياة." },
+              { step: "البحث عن منزل", desc: "معاينة عقارات تناسب العائلة." },
+              { step: "الاستقرار", desc: "تجهيز الإنترنت والماء والبنك." }
+            ],
+            faq: [
+              { q: "هل تساعدون في المدارس الأمريكية/البريطانية؟", a: "نعم، لدينا علاقات مع جميع المدارس الدولية الكبرى." }
+            ]
+          }
+        },
+      },
+      howItWorks: {
+        title: "تجربة سلسة ومريحة",
+        steps: [
+          { title: "الاستشارة", desc: "تواصل عبر واتساب. نستمع لاحتياجاتك بدقة." },
+          { title: "العرض", desc: "نقدم خطة واضحة وباقة أسعار شفافة." },
+          { title: "الوصول", desc: "نستقبلك في برشلونة ونتولى كافة الإجراءات." },
+          { title: "الإتمام", desc: "نضمن إنجاز كل مهمة لرضاك التام." }
+        ]
+      },
+      whyUs: {
+        title: "لماذا يثق بنا عملاء الخليج",
+        subtitle: "نجمع بين الخبرة الإسبانية المحلية والفهم العميق للثقافة العربية.",
+        items: {
+          trust: { title: "ثقة وشفافية", desc: "أسعار واضحة، بدون رسوم خفية، ونصيحة أمينة." },
+          lang: { title: "عربي وإسباني", desc: "نتحدث لغتك واللغة المحلية بطلاقة." },
+          exp: { title: "مصداقية محلية", desc: "سنوات من الخبرة في التعامل مع البيروقراطية الكتالونية." },
+          privacy: { title: "تركيز على الخصوصية", desc: "السرية هي أولويتنا لعملاء VIP والمرضى." }
+        }
+      },
+      testimonials: {
+        title: "قصص العملاء",
+        subtitle: "آراء حقيقية من عملائنا الكرام.",
+        items: [
+          { name: "السيد المنصور", location: "الرياض، السعودية", text: "المرافقة الطبية كانت استثنائية. تعاملوا مع الترجمة في المستشفى باحترافية تامة.", type: "مريض" },
+          { name: "سارة ب.", location: "دبي، الإمارات", text: "كان الحصول على إقامة الطالب كابوساً حتى وجدت Barcelona Simply. أنصح بهم بشدة.", type: "طالبة" },
+          { name: "خالد", location: "الدوحة، قطر", text: "احترافية، التزام بالوقت، وسرية تامة. خدمة الكونسيرج فاقت التوقعات.", type: "عميل VIP" },
+          { name: "فاطمة", location: "الكويت", text: "ساعدوا عائلتي في الاستقرار، إيجاد مدرسة، وتجهيز أوراقنا في وقت قياسي.", type: "عائلة" },
+        ]
+      },
+      homeAppointment: {
+        title: "احجز خدمتك في ثوانٍ",
+        subtitle: "لا تنتظر البيروقراطية. احجز مساعدتك الآن.",
+        steps: {
+          step1: "اختر الخدمة",
+          step2: "حدد التاريخ",
+          step3: "أكد عبر واتساب",
+        },
+        cta: "ابدأ الحجز"
+      },
+      ctaSection: {
+        title: "تخطط لزيارة برشلونة؟",
+        subtitle: "اضمن تجربة خالية من المتاعب مع مساعدتنا الاحترافية.",
+        buttonText: "تواصل معنا عبر واتساب",
+      },
+      pricing: {
+        title: "باقات خدمات شفافة",
+        subtitle: "اختر مستوى الدعم الذي يناسب احتياجاتك. بدون تكاليف خفية.",
+        cta: "اختر الباقة",
+        bookWhatsapp: "احجز عبر واتساب",
+        categories: {
+          medical: {
+            title: "المرافقة الطبية",
+            subtitle: "دعم احترافي لرحلة علاجك",
+            tiers: [
+              { name: "زيارة أساسية", price: "€150", desc: "موعد واحد", features: ["موعد طبي واحد", "ساعتان مرافقة", "ترجمة فورية", "مساعدة الصيدلية"] },
+              { name: "باقة العناية", price: "€400", desc: "دعم شامل", features: ["3 مواعيد طبية", "ترجمة التقارير", "تنسيق الفحوصات", "مكالمة متابعة"], highlight: true },
+              { name: "VIP طبي", price: "€950", desc: "عناية متكاملة", features: ["مواعيد غير محدودة (أسبوع)", "دعم دخول المستشفى", "دعم هاتفي 24/7", "تنسيق نقل خاص"] }
+            ]
+          },
+          admin: {
+            title: "إداري وقانوني",
+            subtitle: "تخليص الأوراق بسرعة",
+            tiers: [
+              { name: "أساسي", price: "€150", desc: "إجراء واحد", features: ["حجز موعد NIE", "تعبئة النماذج", "مرافقة مكتب واحد", "تجهيز الضرائب"] },
+              { name: "باقة الإقامة", price: "€550", desc: "العملية الكاملة", features: ["دعم طلب الفيزا", "استخراج بطاقة TIE", "تسجيل السكن", "فتح حساب بنكي", "تنسيق ترجمة قانونية"], highlight: true }
+            ]
+          },
+          student: {
+            title: "باقات الطلاب",
+            subtitle: "استقر للدراسة",
+            tiers: [
+              { name: "باقة الاستقرار", price: "€450", desc: "دعم الوصول", features: ["بطاقة TIE/الإقامة", "مساعدة التسجيل الجامعي", "المساعدة في البحث عن سكن", "شريحة اتصال وبنك"] }
+            ]
+          },
+          vip: {
+            title: "VIP كونسيرج",
+            subtitle: "إدارة أسلوب الحياة",
+            tiers: [
+              { name: "مساعد يومي", price: "€300", desc: "يوم كامل (8 ساعات)", features: ["مساعد شخصي", "تسوق وحجوزات", "إدارة التنقلات", "دعم عند الطلب"] },
+              { name: "الأسبوع البلاتيني", price: "€1800", desc: "دعم أسبوعي", features: ["مدير مخصص 24/7", "تخطيط كامل للرحلة", "حجوزات أولوية", "إدارة الأزمات"] }
+            ]
+          }
+        },
+        alaCarte: {
+          title: "خدمات فردية",
+          items: [
+            { name: "مساعدة بالساعة", price: "€50/ساعة", desc: "حد أدنى 3 ساعات" },
+            { name: "تنسيق استقبال المطار", price: "€80", desc: "ترتيب سيارة فاخرة" },
+            { name: "معاينة عقار", price: "€100", desc: "للزيارة الواحدة مع ترجمة" }
+          ]
+        },
+        faq: {
+          title: "أسئلة شائعة",
+          items: [
+            { q: "هل تقومون بتقديم الفيزا مباشرة؟", a: "نحن نساعد في تجهيز الملف بالكامل وحجز الموعد، التقديم النهائي شخصي." },
+            { q: "هل تساعدون في الرحلات العلاجية العائلية؟", a: "نعم، نتخصص في السياحة العلاجية العائلية وننسق المواعيد لعدة أفراد." },
+            { q: "هل الدفع مطلوب مقدماً؟", a: "عادة نطلب عربون 50% لتأكيد المواعيد وبدء العمل." }
+          ]
+        },
+        finalCta: {
+          title: "جاهز للبدء؟",
+          subtitle: "دعنا نهتم بالتفاصيل بينما تستمتع ببرشلونة.",
+          button: "تحدث معنا عبر واتساب"
+        }
+      },
+      contact: {
+        title: "تواصل معنا",
+        subtitle: "نحن جاهزون لمساعدتك. تواصل عبر واتساب لأسرع استجابة.",
+        whatsapp: "واتساب",
+        formTitle: "أرسل طلباً"
+      },
+      appointmentWizard: {
+        steps: {
+          service: "الخدمة",
+          datetime: "التاريخ",
+          details: "التفاصيل"
+        },
+        labels: {
+          selectService: "نوع الخدمة",
+          selectDate: "التاريخ المفضل",
+          selectTime: "الوقت",
+          name: "الاسم الكامل",
+          email: "البريد الإلكتروني",
+          phone: "رقم الهاتف (مع الرمز الدولي)",
+          message: "تفاصيل إضافية"
+        },
+        buttons: {
+          next: "التالي",
+          back: "رجوع",
+          confirm: "تأكيد الطلب",
+          finish: "تم"
+        },
+        success: {
+          title: "تم الإرسال!",
+          message: "سنتواصل معك قريباً لتأكيد الموعد."
+        }
+      },
+      blog: {
+        title: "أدلة ورؤى برشلونة",
+        subtitle: "نصائح الخبراء حول الإقامة، العلاج، والسياحة الفاخرة في برشلونة.",
+        readMore: "اقرأ المقال",
+        categories: {
+          all: "الكل",
+          medical: "سياحة علاجية",
+          admin: "قانوني وإقامة",
+          study: "الدراسة في إسبانيا",
+          vip: "نصائح VIP",
+          tips: "نصائح سفر",
+        },
+        posts: [
+          {
+            id: '1',
+            slug: 'medical-tourism-barcelona-guide',
+            title: 'السياحة العلاجية في برشلونة: دليل للمرضى الخليجيين',
+            excerpt: 'لماذا تعتبر برشلونة وجهة علاجية رائدة؟ تعرف على أفضل المستشفيات مثل تيكنون وكيرون.',
+            category: 'medical',
+            image: 'https://picsum.photos/800/600?image=1059',
+            date: '15 نوفمبر 2023',
+            author: 'الفريق الطبي',
+            seoTitle: 'السياحة العلاجية في برشلونة - دليل المرضى العرب',
+            metaDesc: 'دليل كامل للعلاج في برشلونة لمواطني دول الخليج. أفضل المستشفيات، متطلبات الفيزا، وخدمات المرافقة.',
+            content: {
+              intro: 'تصنف برشلونة ضمن أفضل الوجهات الطبية عالمياً. بالنسبة للمرضى من السعودية والإمارات وقطر، فهي توفر رعاية صحية عالية الجودة.',
+              sections: [
+                { title: 'أفضل المستشفيات', content: 'مستشفيات مثل مركز تيكنون الطبي ومستشفى كلينيك مشهورة عالمياً في الأورام والقلب والعيون.' },
+                { title: 'حاجز اللغة', content: 'بينما يتحدث الأطباء الإنجليزية، غالباً ما لا يتحدثها طاقم التمريض. وجود مترجم طبي أمر حاسم للراحة والدقة.' },
+                { title: 'فيزا العلاج', content: 'نحن نساعد في جمع التقارير الطبية المطلوبة لطلب الفيزا الطبية الإسبانية.' }
+              ],
+              conclusion: 'تأكد من أن رحلتك العلاجية سلسة مع خدمات المرافقة المحترفة لدينا.'
+            }
+          },
+          {
+            id: '2',
+            slug: 'nie-tie-residency-spain',
+            title: 'NIE مقابل TIE: كل ما تحتاج لمعرفته',
+            excerpt: 'فهم الفرق بين NIE و TIE هو الخطوة الأولى للإقامة في إسبانيا.',
+            category: 'admin',
+            image: 'https://picsum.photos/800/600?image=1076',
+            date: '10 نوفمبر 2023',
+            author: 'الفريق القانوني',
+            seoTitle: 'كيفية الحصول على NIE و TIE في برشلونة',
+            metaDesc: 'تعرف على الفرق بين NIE و TIE وكيفية الحصول عليهما في برشلونة. مساعدة إدارية احترافية.',
+            content: {
+              intro: 'الـ NIE هو رقم، والـ TIE هي البطاقة الفعلية. هذا التمييز يربك الكثير من القادمين الجدد.',
+              sections: [
+                { title: 'ما هو NIE؟', content: 'رقم هوية الأجانب. تحتاجه للضرائب، شراء العقارات، أو قبول الميراث.' },
+                { title: 'ما هي TIE؟', content: 'بطاقة هوية الأجانب. تثبت إقامتك القانونية في إسبانيا (طالب، عمل، غير ربحية).' },
+                { title: 'كيف نساعد', content: 'نحن نحجز الموعد (Cita Previa)، نملأ النماذج، وندفع الضرائب نيابة عنك.' }
+              ],
+              conclusion: 'لا تدع البيروقراطية توقفك. تواصل معنا لمعالجة سريعة للـ NIE.'
+            }
+          },
+          {
+            id: '3',
+            slug: 'luxury-halal-tourism-barcelona',
+            title: 'السياحة الفاخرة والحلال في برشلونة',
+            excerpt: 'دليل VIP للمطاعم الحلال، التسوق الخاص، والإقامات الفاخرة في كتالونيا.',
+            category: 'vip',
+            image: 'https://picsum.photos/800/600?image=1048',
+            date: '25 أكتوبر 2023',
+            author: 'فريق الكونسيرج',
+            seoTitle: 'سياحة فاخرة وحلال في برشلونة - دليل VIP',
+            metaDesc: 'اكتشف أفضل المطاعم الحلال الراقية وتجارب التسوق الفاخرة في برشلونة. مخصص للزوار من الخليج.',
+            content: {
+              intro: 'تقدم برشلونة مزيجاً من الرفاهية الأوروبية والخدمات المتوافقة مع المسافرين المسلمين.',
+              sections: [
+                { title: 'مطاعم حلال فاخرة', content: 'يمكننا حجز غرف طعام خاصة في أفضل المطاعم التي تلبي المتطلبات الغذائية الحلال.' },
+                { title: 'تسوق خاص', content: 'جرب باسيو دي غراسيا مع متسوق شخصي وعروض خاصة في متاجر مثل شانيل وهيرميس.' },
+                { title: 'الإقامة', content: 'نوصي بفنادق 5 نجوم مثل ماندارين أورينتال أو فلل فاخرة خاصة في بيدرالبس.' }
+              ],
+              conclusion: 'جرب أفضل ما في برشلونة مع خدمة الكونسيرج VIP لدينا.'
+            }
+          }
+        ],
+        cta: {
+          title: "تحتاج نصيحة شخصية؟",
+          text: "خبراؤنا مستعدون للإجابة على أسئلتك المحددة عبر واتساب.",
+          button: "تواصل معنا الآن"
+        }
+      },
+      chat: {
+        title: "دعم برشلونة",
+        placeholder: "اكتب سؤالك...",
+        send: "إرسال",
+        welcome: "مرحباً بك في Barcelona Simply. كيف يمكننا مساعدتك في زيارتك اليوم؟",
+        whatsapp: "واتساب",
+        agent_unavailable: "يرجى التواصل معنا عبر واتساب للحصول على مساعدة فورية."
+      }
     }
-  },
-  fr: {
-    nav: {
-      home: "Accueil",
-      services: "Services",
-      about: "À propos",
-      pricing: "Tarifs",
-      contact: "Contact",
-      blog: "Blog",
-      appointment: "Prendre Rendez-vous",
-    },
-    hero: {
-      title: "Votre Guide de Confiance à Barcelone",
-      subtitle: "Assistance premium, accompagnement médical et conciergerie VIP pour les visiteurs du Golfe.",
-      cta: "Réserver par WhatsApp",
-    },
-    servicesPage: {
-      title: "Nos services pour les visiteurs à Barcelone",
-      subtitle: "Nous proposons une gamme de services pour faciliter votre visite à Barcelone : rendez-vous médicaux, assistance administrative, inscription universitaire, statut de résidence et services VIP.",
-      buttons: {
-        book: "Réservez via WhatsApp",
-        more: "Plus d’informations"
-      }
-    },
-    services: {
-      items: {
-        medical: { 
-          title: "Accompagnement Médical", 
-          cardDesc: "Accompagnement professionnel aux rendez-vous médicaux.",
-          heroImage: "https://picsum.photos/1200/600?image=10",
-          summary: "Nous priorisons votre santé et votre confort. Notre équipe fixe des rendez-vous avec les meilleurs spécialistes (Teknon, Quirón, etc.), vous accompagne à la clinique et assure une traduction précise.",
-          whoFor: "Patients voyageant pour des soins ou des examens.",
-          benefits: ["Accès aux meilleures cliniques", "Traduction médicale précise", "Tranquillité d'esprit", "Confidentialité assurée"],
-          features: ["Prise de rendez-vous avec des spécialistes", "Interprétation en personne", "Aide à la traduction de rapports médicaux", "Conseils pharmacie et médicaments"],
-          processTitle: "Processus Médical",
-          process: [
-            { step: "Consultation", desc: "Dites-nous vos besoins médicaux." },
-            { step: "Réservation", desc: "Nous trouvons le meilleur médecin et fixons le rendez-vous." },
-            { step: "Accompagnement", desc: "Nous vous rejoignons à la clinique pour tout traduire." }
-          ],
-          faq: [
-             { q: "Donnez-vous des conseils médicaux ?", a: "Non, nous facilitons uniquement la communication." },
-             { q: "Avec quels hôpitaux travaillez-vous ?", a: "Nous travaillons avec tous les hôpitaux privés et publics majeurs." }
-          ]
-        },
-        admin: { 
-          title: "Support Administratif et Gouvernemental", 
-          cardDesc: "Simplifier la bureaucratie espagnole pour vous.",
-          heroImage: "https://picsum.photos/1200/600?image=1068",
-          summary: "La bureaucratie espagnole peut être écrasante. Nous gérons la paperasse pour les numéros NIE, comptes bancaires, recensement, et autres procédures officielles.",
-          whoFor: "Nouveaux arrivants, acheteurs immobiliers et résidents.",
-          benefits: ["Gain de temps", "Zéro erreur", "Rendez-vous rapides", "Conformité légale"],
-          features: ["Support demande NIE & TIE", "Enregistrement au recensement", "Ouverture de compte bancaire", "Coordination traduction documents"],
-          processTitle: "Notre Processus",
-          process: [
-            { step: "Évaluation", desc: "Nous examinons votre statut et vos documents." },
-            { step: "Préparation", desc: "Nous préparons tous les formulaires." },
-            { step: "Soumission", desc: "Nous vous accompagnons au bureau gouvernemental." }
-          ],
-          faq: [
-            { q: "Pouvez-vous garantir le NIE ?", a: "Nous garantissons la procédure correcte, mais l'approbation dépend des autorités." }
-          ]
-        },
-        study: { 
-          title: "Assistance Études et Résidence", 
-          cardDesc: "Soutien aux étudiants et familles pour l'éducation et le statut légal.",
-          heroImage: "https://picsum.photos/1200/600?image=101",
-          summary: "Nous aidons les étudiants du Golfe à s'installer à Barcelone, en assistant à l'inscription universitaire, aux visas étudiants, cartes TIE et à la recherche de logement.",
-          whoFor: "Étudiants universitaires et familles.",
-          benefits: ["Placement universitaire", "Support visa", "Aide au logement", "Orientation locale"],
-          features: ["Aide à l'inscription universitaire", "Renouvellement visa étudiant", "Arrangement assurance santé", "Recherche de logement étudiant"],
-          processTitle: "Étapes d'installation",
-          process: [
-            { step: "Planification", desc: "Nous identifions vos besoins universitaires." },
-            { step: "Papiers", desc: "Nous compilons les documents pour le visa." },
-            { step: "Installation", desc: "Nous vous aidons à obtenir votre carte TIE." }
-          ],
-          faq: [
-             { q: "Aidez-vous à trouver un logement ?", a: "Oui, nous avons un réseau de partenaires de confiance." }
-          ]
-        },
-        vip: { 
-          title: "Conciergerie VIP (Édition Golfe)", 
-          cardDesc: "Services de luxe exclusifs pour clients de haut niveau.",
-          heroImage: "https://picsum.photos/1200/600?image=1074",
-          summary: "Conçu pour nos clients les plus exigeants. Nous gérons le transport de luxe, l'hébergement 5 étoiles, le shopping privé et les expériences exclusives avec une discrétion absolue.",
-          whoFor: "Visiteurs VIP, diplomates et voyageurs d'affaires.",
-          benefits: ["Support prioritaire 24/7", "Accès flotte luxe", "Confidentialité NDA", "Accès exclusif"],
-          features: ["Transferts aéroport de luxe", "Service chauffeur privé", "Réservations restaurants exclusifs", "Assistant shopping personnel"],
-          processTitle: "Expérience VIP",
-          process: [
-            { step: "Demande", desc: "Envoyez-nous vos dates et préférences." },
-            { step: "Itinéraire", desc: "Nous créons un itinéraire de luxe sur mesure." },
-            { step: "Exécution", desc: "Profitez d'un support 24/7." }
-          ],
-          faq: [
-            { q: "Le service est-il disponible 24/7 ?", a: "Oui, nos clients VIP ont un accès prioritaire." }
-          ]
-        },
-        trans: { 
-          title: "Traduction et Interprétation", 
-          cardDesc: "Interprétation Arabe-Espagnol-Anglais pour réunions.",
-          heroImage: "https://picsum.photos/1200/600?image=103",
-          summary: "Combler le fossé linguistique dans les réunions d'affaires, rendez-vous légaux ou vie quotidienne. Nos locuteurs natifs assurent une communication claire.",
-          whoFor: "Professionnels et particuliers nécessitant un support linguistique.",
-          benefits: ["Fluidité native", "Compréhension culturelle", "Support sur place", "Disponibilité immédiate"],
-          features: ["Interprétation en personne", "Support réunion affaires", "Visite immobilière", "Traduction vie quotidienne"],
-          processTitle: "Réservation",
-          process: [
-            { step: "Planifier", desc: "Dites-nous quand et où." },
-            { step: "Rencontre", desc: "Notre interprète vous rejoint." },
-            { step: "Support", desc: "Nous facilitons la communication." }
-          ],
-          faq: [
-            { q: "Est-ce une traduction jurée ?", a: "Non, c'est pour l'interprétation et les documents non officiels." }
-          ]
-        },
-        family: {
-          title: "Relocalisation Familiale",
-          cardDesc: "Aider les familles à déménager et s'installer confortablement.",
-          heroImage: "https://picsum.photos/1200/600?image=1012",
-          summary: "Vous déménagez en famille à Barcelone ? Nous aidons au choix de l'école, au logement, à l'installation des services publics et à l'orientation dans le quartier.",
-          whoFor: "Familles déménageant pour le travail ou le mode de vie.",
-          benefits: ["Aide admission école", "Installation services", "Logement familial", "Guide quartier"],
-          features: ["Recherche école", "Contrats services (Internet/Eau)", "Achat meubles", "Recherche nounou"],
-          processTitle: "Étapes Relocalisation",
-          process: [
-             { step: "Consultation", desc: "Comprendre vos besoins familiaux." },
-             { step: "Recherche", desc: "Trouver écoles et maisons." },
-             { step: "Installation", desc: "Tout préparer avant votre arrivée." }
-          ],
-          faq: [
-             { q: "Aidez-vous avec les écoles ?", a: "Oui, nous aidons aux inscriptions écoles internationales et locales." }
-          ]
-        }
-      },
-    },
-    howItWorks: {
-      title: "Comment Ça Marche",
-      steps: [
-        { title: "Contactez-nous", desc: "Écrivez-nous via WhatsApp ou le formulaire pour discuter de vos besoins." },
-        { title: "Planifiez votre Visite", desc: "Nous créons un plan sur mesure pour votre voyage médical, d'études ou touristique." },
-        { title: "Arrivée et Soutien", desc: "Nous vous accueillons à votre arrivée et vous accompagnons à tous vos rendez-vous." },
-        { title: "Détendez-vous", desc: "Concentrez-vous sur vos objectifs pendant que nous gérons la logistique et la langue." }
-      ]
-    },
-    whyUs: {
-      title: "Pourquoi Choisir Barcelona Simply ?",
-      items: {
-        trust: { title: "Experts Arabophones", desc: "Locuteurs natifs arabes avec une profonde expérience de la culture du Golfe." },
-        lang: { title: "Confidentialité & Discrétion", desc: "Nous garantissons une confidentialité totale pour tous nos clients." },
-        exp: { title: "Solutions Premium", desc: "Assistance sur mesure pour hôpitaux, universités et bureaux gouvernementaux." },
-      }
-    },
-    testimonials: {
-      title: "Témoignages Clients",
-      subtitle: "Découvrez ce que nos clients disent de leur expérience avec nous.",
-      items: [
-        { name: "A.K.", location: "Dubaï", text: "Barcelona Simply a rendu ma première visite sans souci. Hautement recommandé !" },
-        { name: "M.S.", location: "Riyad", text: "Ils m'ont aidé à m'inscrire à l'université et à gérer ma résidence sans problème." },
-        { name: "F.H.", location: "Abou Dabi", text: "Professionnels, amicaux et très fiables. Je me suis senti pleinement soutenu lors de tous les rendez-vous." },
-        { name: "L.T.", location: "Qatar", text: "Super service de conciergerie VIP. La prise en charge à l'aéroport et les arrangements hôteliers étaient parfaits." },
-      ]
-    },
-    homeAppointment: {
-      title: "Réservez en 3 Étapes Simples",
-      subtitle: "Planifiez votre consultation ou demande de service en ligne efficacement.",
-      steps: {
-        step1: "Choisir le Service",
-        step2: "Sélectionner l'Heure",
-        step3: "Confirmer",
-      },
-      cta: "Commencer la Réservation"
-    },
-    ctaSection: {
-      title: "Prêt pour une expérience sans tracas ?",
-      subtitle: "Rejoignez nos clients satisfaits et profitez de Barcelone sans stress.",
-      buttonText: "Réservez votre service via WhatsApp",
-    },
-    pricing: {
-      title: "Forfaits d'Assistance Premium",
-      subtitle: "Services transparents, professionnels et confidentiels, adaptés à nos clients du Golfe. Nous parlons votre langue et comprenons vos besoins.",
-      cta: "Réserver ce forfait",
-      bookWhatsapp: "Réserver via WhatsApp",
-      packages: {
-        vipGulf: {
-          title: "Pack VIP Golfe",
-          price: "€650",
-          unit: "Assistance Famille",
-          desc: "Pour individus ou familles nécessitant un accompagnement premium.",
-          features: [
-            "Coordination aéroport & accueil de luxe",
-            "Assistant Personnel (Homme/Femme) journée complète",
-            "Accompagnement Médical (2 visites)",
-            "Support Administratif",
-            "Traduction (jusqu'à 10 pages)",
-            "Visites Écoles/Universités",
-            "Recherche Appartement de Luxe",
-            "Support WhatsApp Prioritaire",
-            "Confidentialité Totale"
-          ]
-        },
-        medical: {
-          title: "Pack Médical Premium",
-          price: "€320",
-          unit: "Voyage Médical",
-          desc: "Pour visites médicales, examens et accompagnement clinique.",
-          features: [
-            "Réservation cliniques top (Teknon, Quirón...)",
-            "Accompagnement médical en arabe",
-            "Traduction médicale",
-            "Suivi et rapports",
-            "Support pour 2 jours de rendez-vous",
-            "Protocole de confidentialité VIP"
-          ]
-        },
-        luxury: {
-          title: "Pack Séjour Luxe",
-          price: "€900",
-          unit: "3 Jours",
-          desc: "Pour courts séjours VIP nécessitant une gestion totale.",
-          features: [
-            "3 Jours Complets d'Assistance Personnelle",
-            "Coordination Hôtel & Appartement",
-            "Coordination Chauffeur Privé",
-            "Assistance Shopping Premium",
-            "Support Clinique",
-            "Guide Tourisme & Lifestyle",
-            "Support Arabe",
-            "Communication Prioritaire 24/7"
-          ]
-        },
-        study: {
-           title: "Pack Études & Résidence",
-           price: "€450",
-           unit: "Installation Étudiant",
-           desc: "Pour étudiants et familles nécessitant école/université & installation résidence.",
-           features: [
-              "Support Inscription Université",
-              "Papiers Visa Étudiant",
-              "Demande Carte TIE",
-              "Aide Recherche Logement",
-              "Ouverture Compte Bancaire",
-              "Orientation Locale"
-           ]
-        }
-      },
-      alaCarte: {
-        title: "Prix Services Individuels (À La Carte)",
-        subtitle: "Options flexibles adaptées à vos besoins spécifiques.",
-        items: [
-          { name: "Accompagnement Rendez-vous Médical", price: "€120", desc: "Par visite" },
-          { name: "Support Procédures Administratives", price: "€100", desc: "Par procédure" },
-          { name: "Conseil Résidence / NIE", price: "€80", desc: "Consultation" },
-          { name: "Assistance Visite Université/École", price: "€150", desc: "Par visite" },
-          { name: "Traduction Documents (Arabe-Espagnol)", price: "Dès €20", desc: "Par page" },
-          { name: "Assistant Personnel (Horaire)", price: "€40/h", desc: "Min. 2 heures" },
-          { name: "Assistance Shopping VIP", price: "€60/h", desc: "Guide luxe" },
-          { name: "Préparation Documents & Conseil", price: "Dès €50", desc: "Par dossier" }
-        ]
-      },
-      faq: {
-        title: "Questions Fréquentes",
-        items: [
-          { q: "Le service est-il légal ?", a: "Oui, nous sommes une entité enregistrée en Espagne garantissant conformité légale et confidentialité." },
-          { q: "Que comprend l'accompagnement ?", a: "Il inclut la présence physique, la traduction, le remplissage de formulaires et l'orientation." },
-          { q: "Des assistantes femmes sont-elles disponibles ?", a: "Oui, nous pouvons fournir des assistantes sur demande pour le confort des familles." },
-          { q: "Pouvez-vous coordonner des chauffeurs privés ?", a: "Absolument. Nous travaillons avec des fournisseurs de transport de luxe de confiance." },
-          { q: "Comment fonctionne le paiement ?", a: "Nous acceptons cartes, virements et espèces. Un acompte peut être requis." },
-          { q: "Politique de confidentialité pour clients du Golfe ?", a: "La confidentialité est notre valeur clé. Nous signons des accords de non-divulgation (NDA)." }
-        ]
-      },
-      finalCta: {
-        title: "Planifiez votre séjour avec des experts",
-        subtitle: "Contactez notre équipe arabophone dès maintenant. Nous planifierons chaque étape de votre séjour à Barcelone.",
-        button: "Contacter via WhatsApp"
-      }
-    },
-    contact: {
-      title: "Prendre Rendez-vous",
-      subtitle: "Suivez les étapes ci-dessous pour planifier votre service. Cela ne prend qu'une minute.",
-      whatsapp: "Discuter sur WhatsApp",
-    },
-    appointmentWizard: {
-      steps: {
-        service: "Service",
-        datetime: "Date & Heure",
-        details: "Détails"
-      },
-      labels: {
-        selectService: "Sélectionnez le service dont vous avez besoin",
-        selectDate: "Choisissez une date préférée",
-        selectTime: "Créneau horaire préféré",
-        name: "Nom Complet",
-        email: "Adresse E-mail",
-        phone: "Numéro de Téléphone (avec code pays)",
-        message: "Exigences spécifiques ?"
-      },
-      buttons: {
-        next: "Étape Suivante",
-        back: "Retour",
-        confirm: "Confirmer le Rendez-vous",
-        finish: "Terminé"
-      },
-      success: {
-        title: "Demande Reçue !",
-        message: "Nous avons bien reçu votre demande de rendez-vous. Notre équipe vous contactera via WhatsApp ou E-mail sous peu pour confirmer."
-      }
-    },
-    blog: {
-      title: "Conseils et Guides Barcelone",
-      subtitle: "Conseils d'experts, astuces et guides pour les visiteurs, étudiants et patients à Barcelone.",
-      readMore: "Lire l'article",
-      categories: {
-        all: "Tout",
-        medical: "Médical",
-        admin: "Administratif",
-        study: "Études",
-        vip: "VIP & Voyage",
-        tips: "Conseils",
-      },
-      posts: [
-        {
-          id: '1',
-          slug: 'how-to-book-medical-appointment-barcelona',
-          title: 'Comment prendre un rendez-vous médical spécialisé à Barcelone',
-          excerpt: 'Un guide complet pour les patients internationaux sur la navigation dans le système de santé espagnol.',
-          category: 'medical',
-          image: 'https://picsum.photos/800/600?image=1059',
-          date: '15 Oct, 2023',
-          author: 'Équipe Barcelona Simply',
-          content: {
-            intro: 'Barcelone abrite certaines des meilleures installations médicales d\'Europe. Cependant, pour les non-hispanophones, prendre un rendez-vous peut être un défi.',
-            sections: [
-              { title: 'Pourquoi choisir Barcelone ?', content: 'Barcelone dispose d\'hôpitaux de classe mondiale comme Teknon et Hospital Clínic.' },
-              { title: 'Étape 1 : Public vs Privé', content: 'Pour les visiteurs internationaux, le privé offre un accès plus rapide aux spécialistes et un personnel multilingue.' },
-              { title: 'Étape 2 : Documents nécessaires', content: ['Passeport', 'Assurance voyage ou santé privée', 'Dossiers médicaux antérieurs'] }
-            ],
-            conclusion: 'Prendre rendez-vous ne doit pas être stressant. Nous pouvons gérer la réservation et la traduction pour vous.'
-          }
-        },
-        {
-          id: '2',
-          slug: 'getting-nie-number-spain',
-          title: 'Le guide ultime pour obtenir votre numéro NIE',
-          excerpt: 'Comprendre le processus de demande de NIE est crucial pour quiconque prévoit de rester en Espagne.',
-          category: 'admin',
-          image: 'https://picsum.photos/800/600?image=1076',
-          date: '28 Sep, 2023',
-          author: 'Bureau Juridique',
-          content: {
-            intro: 'Le NIE (Número de Identidad de Extranjero) est votre numéro d\'identification en Espagne. Vous en avez besoin pour presque tout.',
-            sections: [
-              { title: 'Qui a besoin d\'un NIE ?', content: 'Toute personne ayant des intérêts économiques, professionnels ou sociaux en Espagne.' },
-              { title: 'Le défi du rendez-vous', content: 'Obtenir un rendez-vous (Cita Previa) est notoirement difficile. La persévérance est la clé.' }
-            ],
-            conclusion: 'Naviguer dans la bureaucratie espagnole demande de la patience. Notre équipe peut vous aider si vous rencontrez des difficultés.'
-          }
-        },
-        {
-          id: '4',
-          slug: 'student-housing-barcelona',
-          title: 'Trouver un logement étudiant à Barcelone',
-          excerpt: 'Conseils essentiels pour les étudiants internationaux cherchant un appartement ou une colocation.',
-          category: 'study',
-          image: 'https://picsum.photos/800/600?image=1015',
-          date: '10 Nov, 2023',
-          author: 'Équipe Étudiante',
-          content: {
-            intro: 'Le marché immobilier à Barcelone bouge très vite. Voici comment sécuriser votre logement étudiant.',
-            sections: [
-              { title: 'Quartiers étudiants', content: 'Gràcia et Les Corts sont très populaires parmi les étudiants pour leur ambiance et la proximité des universités.' },
-              { title: 'Attention aux arnaques', content: 'Ne payez jamais sans avoir visité ou vérifié l\'agence. Nous pouvons effectuer des visites pour vous.' }
-            ],
-            conclusion: 'Contactez-nous pour une liste de résidences étudiantes de confiance.'
-          }
-        }
-      ],
-      cta: {
-        title: "Besoin d'aide sur ce sujet ?",
-        text: "Notre équipe est prête à vous aider immédiatement.",
-        button: "Contactez via WhatsApp"
-      }
-    },
-    chat: {
-      title: "Assistant Barcelone",
-      placeholder: "Posez une question...",
-      send: "Envoyer",
-      welcome: "Bonjour ! Je suis l'assistant IA de Barcelona Simply. Comment puis-je vous aider aujourd'hui ?",
-      whatsapp: "Discuter sur WhatsApp",
-      agent_unavailable: "Les agents sont occupés. Connectez-vous via WhatsApp pour une aide immédiate."
-    }
-  },
-  ar: {
-    nav: {
-      home: "الرئيسية",
-      services: "خدماتنا",
-      about: "من نحن",
-      pricing: "الأسعار",
-      contact: "تواصل معنا",
-      blog: "المدونة",
-      appointment: "حجز موعد",
-    },
-    hero: {
-      title: "دليلك الموثوق في برشلونة",
-      subtitle: "مساعدة شخصية، مرافقة طبية، وخدمات كونسيرج VIP مخصصة للزوار من دول الخليج.",
-      cta: "احجز الآن عبر WhatsApp",
-    },
-    servicesPage: {
-      title: "خدماتنا للمرافقة والمساعدة في برشلونة",
-      subtitle: "نقدم مجموعة من الخدمات لتسهيل زيارتك إلى برشلونة، سواء لمواعيد طبية، معاملات إدارية، تسجيل دراسي، وضع إقامة، أو خدمات VIP.",
-      buttons: {
-        book: "احجز الآن عبر WhatsApp",
-        more: "مزيد من المعلومات"
-      }
-    },
-    services: {
-      items: {
-        medical: { 
-          title: "خدمة المرافقة الطبية", 
-          cardDesc: "مرافقة احترافية للمواعيد الطبية والمستشفيات.",
-          heroImage: "https://picsum.photos/1200/600?image=10",
-          summary: "نحن نضع صحتك وراحتك في المقام الأول. يقوم فريقنا بجدولة المواعيد مع أفضل المتخصصين (تيكنون، كيرون، إلخ)، ومرافقتك إلى العيادة، وضمان ترجمة دقيقة لجميع المعلومات الطبية.",
-          whoFor: "المرضى القادمون للعلاج أو الفحوصات أو الجراحة.",
-          benefits: ["الوصول لأفضل العيادات", "ترجمة طبية دقيقة", "راحة البال", "ضمان الخصوصية"],
-          features: ["جدولة المواعيد مع المتخصصين", "الترجمة الفورية أثناء الاستشارات", "المساعدة في ترجمة التقارير الطبية", "إرشاد الصيدليات والأدوية"],
-          processTitle: "الإجراءات الطبية",
-          process: [
-            { step: "الاستشارة", desc: "أخبرنا باحتياجاتك الطبية أو التخصص المطلوب." },
-            { step: "الحجز", desc: "نجد أفضل طبيب ونحدد الموعد." },
-            { step: "المرافقة", desc: "نقابلك في العيادة ونترجم كل شيء." }
-          ],
-          faq: [
-             { q: "هل تقدمون نصائح طبية؟", a: "لا، نحن نسهل التواصل فقط. نحن لسنا أطباء." },
-             { q: "ما هي المستشفيات التي تتعاملون معها؟", a: "نتعامل مع جميع المستشفيات الخاصة والعامة الكبرى في برشلونة." }
-          ]
-        },
-        admin: { 
-          title: "الدعم الإداري والحكومي", 
-          cardDesc: "تبسيط البيروقراطية الإسبانية لأجلك.",
-          heroImage: "https://picsum.photos/1200/600?image=1068",
-          summary: "يمكن أن تكون البيروقراطية الإسبانية معقدة. نحن نتولى الأوراق الخاصة بأرقام NIE، والحسابات المصرفية، وتسجيل السكان، وغيرها من الإجراءات الرسمية حتى لا تضطر لذلك.",
-          whoFor: "القادمون الجدد، مشترو العقارات، والمقيمون.",
-          benefits: ["توفير الوقت", "أوراق خالية من الأخطاء", "مواعيد سريعة", "الامتثال القانوني"],
-          features: ["دعم طلبات NIE و TIE", "تسجيل السكن (Empadronamiento)", "المساعدة في فتح حساب بنكي", "تنسيق ترجمة المستندات الرسمية"],
-          processTitle: "إجراءاتنا",
-          process: [
-            { step: "التقييم", desc: "نراجع وضعك الحالي والمستندات المطلوبة." },
-            { step: "التحضير", desc: "نقوم بإعداد جميع النماذج وتحديد المواعيد." },
-            { step: "التقديم", desc: "نرافقك إلى المكتب الحكومي." }
-          ],
-          faq: [
-            { q: "هل تضمنون الحصول على NIE؟", a: "نحن نضمن صحة الإجراءات، لكن الموافقة النهائية تعتمد على السلطات." }
-          ]
-        },
-        study: { 
-          title: "المساعدة في الدراسة والإقامة", 
-          cardDesc: "دعم الطلاب والعائلات في التعليم والوضع القانوني.",
-          heroImage: "https://picsum.photos/1200/600?image=101",
-          summary: "نساعد الطلاب من دول الخليج على الاستقرار في برشلونة، والمساعدة في التسجيل الجامعي، وتأشيرات الطلاب، وبطاقات TIE، وإيجاد سكن مناسب.",
-          whoFor: "طلاب الجامعات والعائلات المنتقلة من أجل التعليم.",
-          benefits: ["القبول الجامعي", "دعم تجديد التأشيرة", "المساعدة في السكن", "التوجيه المحلي"],
-          features: ["المساعدة في القبول الجامعي", "دعم تجديد تأشيرة الطالب", "ترتيب التأمين الصحي", "البحث عن سكن للطلاب"],
-          processTitle: "خطوات الاستقرار",
-          process: [
-            { step: "التخطيط", desc: "نحدد احتياجاتك الجامعية والسكنية." },
-            { step: "الأوراق", desc: "نجمع جميع المستندات لتأشيرة الطالب." },
-            { step: "الاستقرار", desc: "نساعدك في الحصول على بطاقة TIE عند الوصول." }
-          ],
-          faq: [
-             { q: "هل تساعدون في العثور على سكن؟", a: "نعم، لدينا شبكة من موفري سكن الطلاب الموثوقين." }
-          ]
-        },
-        vip: { 
-          title: "خدمة كونسيرج VIP (إصدار الخليج)", 
-          cardDesc: "خدمات فاخرة وحصرية لكبار الشخصيات.",
-          heroImage: "https://picsum.photos/1200/600?image=1074",
-          summary: "مصممة لعملائنا الأكثر تميزاً. نحن ندير النقل الفاخر، والإقامة في فنادق 5 نجوم، والتسوق الخاص، والتجارب الحصرية بسرية تامة.",
-          whoFor: "زوار VIP، الدبلوماسيون، ورجال الأعمال.",
-          benefits: ["دعم ذو أولوية 24/7", "الوصول لأسطول فاخر", "خصوصية تامة (NDA)", "وصول حصري"],
-          features: ["توصيلات مطار فاخرة", "خدمة سائق خاص", "حجوزات مطاعم حصرية", "مساعد تسوق شخصي"],
-          processTitle: "تجربة VIP",
-          process: [
-            { step: "الطلب", desc: "أرسل لنا تواريخك وتفضيلاتك." },
-            { step: "البرنامج", desc: "نصمم برنامجاً فاخراً مخصصاً لك." },
-            { step: "التنفيذ", desc: "استمتع بدعم على مدار الساعة طوال إقامتك." }
-          ],
-          faq: [
-            { q: "هل الخدمة متاحة 24/7؟", a: "نعم، يتمتع عملاء VIP لدينا بدعم على مدار الساعة." }
-          ]
-        },
-        trans: { 
-          title: "الترجمة والترجمة الفورية", 
-          cardDesc: "ترجمة فورية عربي-إسباني-إنجليزي للاجتماعات.",
-          heroImage: "https://picsum.photos/1200/600?image=103",
-          summary: "سد الفجوة اللغوية في اجتماعات العمل، والمواعيد القانونية، أو الحياة اليومية. يضمن متحدثونا الأصليون تواصلاً واضحاً.",
-          whoFor: "محترفو الأعمال والأفراد الذين يحتاجون إلى دعم لغوي.",
-          benefits: ["طلاقة أصلية", "فهم ثقافي", "دعم في الموقع", "توافر فوري"],
-          features: ["ترجمة فورية شخصية", "دعم اجتماعات العمل", "المساعدة في معاينة العقارات", "ترجمة الحياة اليومية العامة"],
-          processTitle: "الحجز",
-          process: [
-            { step: "الجدولة", desc: "أخبرنا متى وأين تحتاجنا." },
-            { step: "المقابلة", desc: "يقابلك المترجم في الموقع." },
-            { step: "الدعم", desc: "نسهل التواصل فوراً." }
-          ],
-          faq: [
-            { q: "هل هذه ترجمة محلفة؟", a: "لا، هذه للترجمة الفورية والمستندات غير الرسمية." }
-          ]
-        },
-        family: {
-          title: "دعم انتقال العائلات والاستقرار",
-          cardDesc: "مساعدة العائلات على الانتقال والاستقرار في برشلونة براحة.",
-          heroImage: "https://picsum.photos/1200/600?image=1012",
-          summary: "تنتقل مع عائلتك إلى برشلونة؟ نساعدك في اختيار المدارس، والسكن، وتركيب الخدمات، والتعرف على الحي لضمان انتقال سلس.",
-          whoFor: "العائلات المنتقلة للعمل أو نمط الحياة.",
-          benefits: ["المساعدة في قبول المدارس", "تركيب الخدمات", "سكن مناسب للعائلة", "دليل الأحياء"],
-          features: ["البحث عن المدارس وزيارتها", "عقود الخدمات (إنترنت/مياه)", "شراء الأثاث", "البحث عن مربية/مدبرة منزل"],
-          processTitle: "خطوات الانتقال",
-          process: [
-             { step: "الاستشارة", desc: "فهم احتياجات عائلتك." },
-             { step: "البحث", desc: "إيجاد المدارس والمنازل." },
-             { step: "الاستقرار", desc: "تجهيز كل شيء قبل وصولك." }
-          ],
-          faq: [
-             { q: "هل تساعدون في المدارس؟", a: "نعم، نساعد في التسجيل في المدارس الدولية والمحلية." }
-          ]
-        }
-      },
-    },
-    howItWorks: {
-      title: "كيف نعمل",
-      steps: [
-        { title: "تواصل معنا", desc: "تواصل عبر واتساب أو نموذج الاتصال لمناقشة احتياجاتك." },
-        { title: "خطط لزيارتك", desc: "نقوم بإنشاء خطة مخصصة لرحلتك العلاجية أو الدراسية أو السياحية." },
-        { title: "الوصول والدعم", desc: "نستقبلك عند الوصول ونرافقك في جميع المواعيد." },
-        { title: "استرخ واستمتع", desc: "ركز على أهدافك بينما نتولى نحن الأمور اللوجستية واللغة." }
-      ]
-    },
-    whyUs: {
-      title: "لماذا تختار Barcelona Simply؟",
-      items: {
-        trust: { title: "خبراء ناطقون بالعربية", desc: "متحدثون أصليون بالعربية مع خبرة عميقة في ثقافة الخليج واحتياجاته." },
-        lang: { title: "الخصوصية والسرية", desc: "نحن نضمن السرية التامة لجميع عملائنا." },
-        exp: { title: "حلول متميزة", desc: "مساعدة مخصصة للمستشفيات والجامعات والمكاتب الحكومية." },
-      }
-    },
-    testimonials: {
-      title: "آراء العملاء",
-      subtitle: "اقرأ ما يقوله عملاؤنا عن تجربتهم معنا.",
-      items: [
-        { name: "A.K.", location: "دبي", text: "جعلت Barcelona Simply زيارتي الأولى خالية من القلق. أنصح بهم بشدة!" },
-        { name: "M.S.", location: "الرياض", text: "ساعدوني في التسجيل بالجامعة وإدارة إقامتي بسلاسة." },
-        { name: "F.H.", location: "أبو ظبي", text: "محترفون، ودودون، وموثوقون للغاية. شعرت بالدعم الكامل خلال جميع المواعيد." },
-        { name: "L.T.", location: "قطر", text: "خدمة كونسيرج VIP رائعة. كان الاستقبال في المطار وترتيبات الفندق مثالية." },
-      ]
-    },
-    homeAppointment: {
-      title: "احجز في 3 خطوات بسيطة",
-      subtitle: "قم بجدولة استشارتك أو طلب الخدمة عبر الإنترنت بكفاءة.",
-      steps: {
-        step1: "اختر الخدمة",
-        step2: "حدد الوقت",
-        step3: "تأكيد الحجز",
-      },
-      cta: "ابدأ الحجز الآن"
-    },
-    ctaSection: {
-      title: "جاهز لتجربة سلسة؟",
-      subtitle: "انضم إلى عملائنا السعداء واستمتع ببرشلونة دون عناء.",
-      buttonText: "احجز خدمتك عبر واتساب",
-    },
-    pricing: {
-      title: "باقات المرافقة الفاخرة",
-      subtitle: "خدمات شفافة، احترافية، وسرية مخصصة لعملائنا من دول الخليج. نحن نتحدث لغتكم ونفهم احتياجاتكم.",
-      cta: "حجز هذه الباقة",
-      bookWhatsapp: "احجز عبر واتساب",
-      packages: {
-        vipGulf: {
-          title: "باقة VIP الخليج",
-          price: "€650",
-          unit: "مساعدة العائلة",
-          desc: "للأفراد أو العائلات الذين يحتاجون إلى مرافقة متميزة.",
-          features: [
-            "تنسيق المطار واستقبال فاخر",
-            "مساعد شخصي (رجل/امرأة) ليوم كامل",
-            "مرافقة طبية (زيارتان)",
-            "دعم إداري شامل",
-            "ترجمة (حتى 10 صفحات)",
-            "زيارات المدارس/الجامعات",
-            "معاينة شقق فاخرة",
-            "دعم واتساب ذو أولوية قصوى",
-            "سرية تامة"
-          ]
-        },
-        medical: {
-          title: "الباقة الطبية المميزة",
-          price: "€320",
-          unit: "رحلة طبية",
-          desc: "للزيارات الطبية والفحوصات ومرافقة العيادة.",
-          features: [
-            "الحجز في أرقى العيادات (تيكنون، كيرون...)",
-            "مرافقة طبية ناطقة بالعربية",
-            "ترجمة طبية احترافية",
-            "ترجمة التقارير والمتابعة",
-            "دعم لمدة يومين من المواعيد",
-            "بروتوكول خصوصية VIP"
-          ]
-        },
-        luxury: {
-          title: "باقة الإقامة الفاخرة",
-          price: "€900",
-          unit: "3 أيام",
-          desc: "للإقامات القصيرة VIP التي تتطلب إدارة كاملة.",
-          features: [
-            "3 أيام كاملة من المساعدة الشخصية",
-            "تنسيق الفنادق والشقق الفندقية",
-            "تنسيق السائق الخاص",
-            "مساعدة تسوق فاخرة",
-            "دعم العيادات",
-            "إرشاد سياحي وأسلوب حياة",
-            "دعم عربي",
-            "تواصل ذو أولوية 24/7"
-          ]
-        },
-        study: {
-           title: "باقة الدراسة والإقامة",
-           price: "€450",
-           unit: "تجهيز الطالب",
-           desc: "للطلاب والعائلات الذين يحتاجون إلى تجهيز المدرسة/الجامعة والإقامة.",
-           features: [
-              "دعم التسجيل الجامعي",
-              "أوراق تأشيرة الطالب",
-              "طلب بطاقة TIE",
-              "المساعدة في البحث عن سكن",
-              "فتح حساب بنكي",
-              "التوجيه المحلي"
-           ]
-        }
-      },
-      alaCarte: {
-        title: "أسعار الخدمات الفردية (حسب الطلب)",
-        subtitle: "خيارات مرنة مصممة خصيصاً لاحتياجاتك المحددة.",
-        items: [
-          { name: "مرافقة موعد طبي", price: "€120", desc: "للزيارة الواحدة" },
-          { name: "دعم الإجراءات الإدارية", price: "€100", desc: "للإجراء الواحد" },
-          { name: "إرشاد الإقامة / NIE", price: "€80", desc: "استشارة" },
-          { name: "مساعدة زيارة جامعة أو مدرسة", price: "€150", desc: "للزيارة الواحدة" },
-          { name: "ترجمة المستندات (عربي-إسباني)", price: "من €20", desc: "للصفحة" },
-          { name: "مساعد شخصي (بالساعة)", price: "€40/ساعة", desc: "حد أدنى ساعتين" },
-          { name: "مساعدة تسوق VIP", price: "€60/ساعة", desc: "دليل فاخر" },
-          { name: "إعداد المستندات والاستشارات", price: "من €50", desc: "للملف" }
-        ]
-      },
-      faq: {
-        title: "الأسئلة الشائعة",
-        items: [
-          { q: "هل الخدمة قانونية؟", a: "نعم، نحن كيان مسجل في إسبانيا نضمن الامتثال القانوني الكامل والسرية." },
-          { q: "ماذا تشمل المرافقة؟", a: "تشمل الحضور الشخصي، الترجمة، تعبئة النماذج، والتوجيه خلال المواعيد." },
-          { q: "هل تتوفر مساعدات إناث؟", a: "نعم، يمكننا توفير مساعدات إناث عند الطلب لضمان راحة وخصوصية العائلات." },
-          { q: "هل يمكنكم تنسيق سائقين خاصين؟", a: "بالتأكيد. نتعامل مع موفري خدمات نقل فاخرة موثوقين لراحتكم." },
-          { q: "كيف يتم الدفع؟", a: "نقبل البطاقات الائتمانية، التحويلات البنكية، والنقد. قد يلزم دفع عربون للباقات الكبيرة." },
-          { q: "سياسة الخصوصية لعملاء الخليج؟", a: "الخصوصية هي قيمتنا الأساسية. نوقع اتفاقيات عدم إفشاء (NDA) لعملاء VIP." }
-        ]
-      },
-      finalCta: {
-        title: "خطط لإقامتك مع الخبراء",
-        subtitle: "تواصل مع فريقنا الناطق بالعربية الآن — سنخطط لكل خطوة من إقامتك في برشلونة.",
-        button: "تواصل عبر واتساب"
-      }
-    },
-    contact: {
-      title: "احجز موعدك",
-      subtitle: "اتبع الخطوات أدناه لجدولة خدمتك. لا يستغرق الأمر سوى دقيقة واحدة.",
-      whatsapp: "تواصل عبر واتساب",
-    },
-    appointmentWizard: {
-      steps: {
-        service: "الخدمة",
-        datetime: "الوقت والتاريخ",
-        details: "التفاصيل"
-      },
-      labels: {
-        selectService: "اختر الخدمة التي تحتاجها",
-        selectDate: "اختر التاريخ المفضل",
-        selectTime: "الوقت المفضل",
-        name: "الاسم الكامل",
-        email: "البريد الإلكتروني",
-        phone: "رقم الهاتف (مع مفتاح الدولة)",
-        message: "أي متطلبات خاصة؟"
-      },
-      buttons: {
-        next: "الخطوة التالية",
-        back: "رجوع",
-        confirm: "تأكيد الموعد",
-        finish: "تم"
-      },
-      success: {
-        title: "تم استلام الطلب!",
-        message: "لقد استلمنا طلب موعدك. سيقوم فريقنا بالتواصل معك عبر الواتساب أو البريد الإلكتروني قريباً للتأكيد."
-      }
-    },
-    blog: {
-      title: "رؤى وأدلة برشلونة",
-      subtitle: "نصائح وإرشادات من الخبراء للزوار والطلاب والمرضى العرب في برشلونة.",
-      readMore: "اقرأ المقال",
-      categories: {
-        all: "الكل",
-        medical: "طبي",
-        admin: "إداري",
-        study: "دراسة",
-        vip: "سياحة VIP",
-        tips: "نصائح",
-      },
-      posts: [
-        {
-          id: '1',
-          slug: 'how-to-book-medical-appointment-barcelona',
-          title: 'كيف تحجز موعداً طبياً في برشلونة (دليل شامل)',
-          excerpt: 'دليل كامل للمرضى الدوليين حول كيفية التنقل في نظام الرعاية الصحية الإسباني ومقابلة المتخصصين.',
-          category: 'medical',
-          image: 'https://picsum.photos/800/600?image=1059',
-          date: '15 أكتوبر 2023',
-          author: 'فريق برشلونة سيمبلي',
-          content: {
-            intro: 'تضم برشلونة بعضاً من أفضل المرافق الطبية في أوروبا. ومع ذلك، بالنسبة لغير الناطقين بالإسبانية، قد يكون حجز موعد تحدياً.',
-            sections: [
-              { title: 'لماذا تختار العلاج في برشلونة؟', content: 'جودة الرعاية عالية جداً، والتكاليف غالباً ما تكون أقل من دول أخرى. المستشفيات مثل تيكنون وكيرون مشهورة عالمياً.' },
-              { title: 'الخطوة 1: اختيار القطاع الخاص', content: 'بالنسبة للزوار الدوليين، الطريق الأسرع والأكثر راحة هو القطاع الخاص.' },
-              { title: 'الخطوة 2: المستندات المطلوبة', content: ['جواز السفر', 'تأمين السفر أو التأمين الصحي الخاص', 'السجلات الطبية السابقة (مترجمة)'] }
-            ],
-            conclusion: 'لا داعي للقلق بشأن اللغة. نحن نتولى الحجز والمرافقة والترجمة بالكامل.'
-          }
-        },
-        {
-          id: '2',
-          slug: 'getting-nie-number-spain',
-          title: 'الدليل الكامل للحصول على رقم NIE في إسبانيا',
-          excerpt: 'فهم عملية التقديم للحصول على NIE أمر بالغ الأهمية لأي شخص يخطط للإقامة في إسبانيا للدراسة أو العمل.',
-          category: 'admin',
-          image: 'https://picsum.photos/800/600?image=1076',
-          date: '28 سبتمبر 2023',
-          author: 'المكتب القانوني',
-          content: {
-            intro: 'رقم NIE (رقم تعريف الأجانب) هو هويتك في إسبانيا. تحتاجه لفتح حساب بنكي، توقيع عقد إيجار، أو حتى الاشتراك في الإنترنت.',
-            sections: [
-              { title: 'من يحتاج إلى NIE؟', content: 'أي شخص لديه مصالح اقتصادية أو مهنية أو اجتماعية في إسبانيا.' },
-              { title: 'تحدي المواعيد', content: 'الحصول على موعد (Cita Previa) أمر صعب للغاية. نحن نساعدك في تخطي هذه العقبة.' }
-            ],
-            conclusion: 'البيروقراطية الإسبانية تتطلب الصبر. فريقنا الإداري جاهز لمساعدتك في كل خطوة.'
-          }
-        },
-        {
-          id: '5',
-          slug: 'arab-families-barcelona-guide',
-          title: 'نصائح السفر للعائلات العربية في برشلونة',
-          excerpt: 'أفضل الأماكن للإقامة، التسوق، والطعام الحلال للعائلات العربية.',
-          category: 'tips',
-          image: 'https://picsum.photos/800/600?image=1011',
-          date: '20 نوفمبر 2023',
-          author: 'فريق السياحة',
-          content: {
-             intro: 'برشلونة مدينة صديقة جداً للعائلات، لكن معرفة المكان المناسب للإقامة وتناول الطعام يحدث فرقاً كبيراً.',
-             sections: [
-                { title: 'السكن', content: 'ننصح بمنطقة Eixample لقربها من كل شيء وأمانها العالي.' },
-                { title: 'الطعام الحلال', content: 'توجد العديد من المطاعم اللبنانية والمغربية والتركية الرائعة في المدينة.' }
-             ],
-             conclusion: 'استمتع برحلتك ودعنا نهتم بالتفاصيل.'
-          }
-        }
-      ],
-      cta: {
-        title: "هل تحتاج مساعدة في هذا الموضوع؟",
-        text: "فريقنا جاهز لمساعدتك فوراً.",
-        button: "تواصل عبر واتساب"
-      }
-    },
-    chat: {
-      title: "مساعد برشلونة",
-      placeholder: "اسأل عن برشلونة أو خدماتنا...",
-      send: "إرسال",
-      welcome: "مرحباً! أنا مساعدك الذكي من Barcelona Simply. كيف يمكنني مساعدتك اليوم؟",
-      whatsapp: "تواصل عبر واتساب",
-      agent_unavailable: "الوكلاء مشغولون حاليًا. تواصل عبر واتساب للحصول على مساعدة فورية."
-    }
-  }
-};
+  };

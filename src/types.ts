@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export type Language = 'en' | 'fr' | 'ar';
@@ -8,9 +7,9 @@ export interface ServiceDetail {
   cardDesc: string;
   heroImage: string;
   summary: string;
-  whoFor: string; // New field
-  benefits: string[]; // New field
-  features: string[]; // New field
+  whoFor: string; 
+  benefits: string[];
+  features: string[];
   processTitle: string;
   process: { step: string; desc: string }[];
   faq: { q: string; a: string }[];
@@ -25,11 +24,27 @@ export interface BlogPost {
   image: string;
   date: string;
   author: string;
+  seoTitle: string; // New SEO field
+  metaDesc: string; // New SEO field
   content: {
     intro: string;
     sections: { title: string; content: string | string[] }[];
     conclusion: string;
   };
+}
+
+export interface PricingTier {
+  name: string;
+  price: string;
+  desc: string;
+  features: string[];
+  highlight?: boolean;
+}
+
+export interface PricingCategory {
+  title: string;
+  subtitle: string;
+  tiers: PricingTier[];
 }
 
 export interface Translation {
@@ -46,6 +61,8 @@ export interface Translation {
     title: string;
     subtitle: string;
     cta: string;
+    ctaSecondary: string;
+    trustBadge: string;
   };
   servicesPage: {
     title: string;
@@ -62,7 +79,7 @@ export interface Translation {
       study: ServiceDetail;
       vip: ServiceDetail;
       trans: ServiceDetail;
-      family: ServiceDetail; // New service
+      family: ServiceDetail;
     };
   };
   howItWorks: {
@@ -71,16 +88,18 @@ export interface Translation {
   };
   whyUs: {
     title: string;
+    subtitle: string;
     items: {
       trust: { title: string; desc: string };
       lang: { title: string; desc: string };
       exp: { title: string; desc: string };
+      privacy: { title: string; desc: string };
     };
   };
   testimonials: {
     title: string;
     subtitle: string;
-    items: { name: string; location: string; text: string }[];
+    items: { name: string; location: string; text: string; type: string }[];
   };
   homeAppointment: {
     title: string;
@@ -102,15 +121,14 @@ export interface Translation {
     subtitle: string;
     cta: string;
     bookWhatsapp: string;
-    packages: {
-      vipGulf: { title: string; price: string; unit: string; desc: string; features: string[] };
-      medical: { title: string; price: string; unit: string; desc: string; features: string[] };
-      luxury: { title: string; price: string; unit: string; desc: string; features: string[] };
-      study: { title: string; price: string; unit: string; desc: string; features: string[] }; // Added Study pack
+    categories: {
+      medical: PricingCategory;
+      admin: PricingCategory;
+      student: PricingCategory;
+      vip: PricingCategory;
     };
     alaCarte: {
       title: string;
-      subtitle: string;
       items: { name: string; price: string; desc: string }[];
     };
     faq: {
@@ -127,6 +145,7 @@ export interface Translation {
     title: string;
     subtitle: string;
     whatsapp: string;
+    formTitle: string;
   };
   appointmentWizard: {
     steps: {
