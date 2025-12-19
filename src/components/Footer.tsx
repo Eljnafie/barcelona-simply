@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -17,10 +18,10 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4 rtl:space-x-reverse">
               {/* Social placeholders */}
               <div className="w-8 h-8 bg-navy-800 rounded-full flex items-center justify-center hover:bg-gold-500 transition-colors cursor-pointer">
-                <span className="text-xs">IG</span>
+                <span className="text-xs font-bold">IG</span>
               </div>
               <div className="w-8 h-8 bg-navy-800 rounded-full flex items-center justify-center hover:bg-gold-500 transition-colors cursor-pointer">
-                <span className="text-xs">FB</span>
+                <span className="text-xs font-bold">FB</span>
               </div>
             </div>
           </div>
@@ -28,10 +29,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.nav.services}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/services" className="hover:text-gold-500 transition-colors">{t.services.items.medical.title}</Link></li>
-              <li><Link to="/services" className="hover:text-gold-500 transition-colors">{t.services.items.admin.title}</Link></li>
-              <li><Link to="/services" className="hover:text-gold-500 transition-colors">{t.services.items.study.title}</Link></li>
-              <li><Link to="/services" className="hover:text-gold-500 transition-colors">{t.services.items.vip.title}</Link></li>
+              <li><Link to="/services/medical" className="hover:text-gold-500 transition-colors">{t.services.items.medical.title}</Link></li>
+              <li><Link to="/services/admin" className="hover:text-gold-500 transition-colors">{t.services.items.admin.title}</Link></li>
+              <li><Link to="/services/study" className="hover:text-gold-500 transition-colors">{t.services.items.study.title}</Link></li>
+              <li><Link to="/services/vip" className="hover:text-gold-500 transition-colors">{t.services.items.vip.title}</Link></li>
             </ul>
           </div>
 
@@ -49,8 +50,15 @@ const Footer: React.FC = () => {
              </ul>
           </div>
         </div>
-        <div className="border-t border-navy-800 mt-8 pt-8 text-center text-xs">
+        
+        <div className="border-t border-navy-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>&copy; {new Date().getFullYear()} Barcelona Simply. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link to="/admin" className="text-slate-500 hover:text-gold-500 flex items-center gap-1 transition-colors">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+              Admin Access
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
