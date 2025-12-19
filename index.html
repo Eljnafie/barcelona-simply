@@ -6,24 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barcelona Simply | Premium Arabic Concierge, Medical & Legal Assistance</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Premium Arabic-speaking assistance in Barcelona for GCC visitors. Medical escort, hospital support, residency & NIE help." />
-    <meta name="keywords" content="Arabic concierge Barcelona, GCC concierge Spain, medical escort Barcelona" />
-    
-    <!-- OpenGraph -->
-    <meta property="og:title" content="Barcelona Simply – Premium Arabic Concierge in Barcelona">
-    <meta property="og:description" content="Trusted concierge & medical assistance for GCC visitors. Hospital escort, residency & NIE, student support.">
-    <meta property="og:image" content="https://barcelonasimply.com/og-image.jpg">
-    <meta property="og:url" content="https://barcelonasimply.com">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f59e0b'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='Montserrat, sans-serif' font-weight='bold' font-size='60' fill='white'>B</text></svg>">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -52,17 +41,30 @@
               sans: ['Montserrat', 'sans-serif'],
               arabic: ['Noto Kufi Arabic', 'sans-serif'],
             },
+            animation: {
+              'slow-zoom': 'slowZoom 20s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              slowZoom: {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.1)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
           }
         }
       }
     </script>
     <style>
       body { scroll-behavior: smooth; }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+      .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+      .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
   <script type="importmap">
 {
@@ -78,13 +80,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50">
-    <!-- SEO FALLBACK -->
-    <div class="hidden">
-      <h1>Barcelona Simply – Premium Arabic Concierge in Barcelona</h1>
-      <p>Assistance for GCC travelers: medical, administrative, NIE, residency, and VIP services.</p>
-    </div>
-
+  <body class="bg-slate-50 selection:bg-gold-500 selection:text-navy-950">
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>

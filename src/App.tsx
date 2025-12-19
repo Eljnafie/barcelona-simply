@@ -18,8 +18,8 @@ const App: React.FC = () => {
     <LanguageProvider>
       <HashRouter>
         <Routes>
-          {/* Admin Routes - No Layout wrapper or specific AdminLayout */}
-          <Route path="/admin/*" element={<AdminDashboard />} />
+          {/* Admin Routes - El componente maneja su propio estado de login */}
+          <Route path="/admin" element={<AdminDashboard />} />
           
           {/* Public Routes with Layout */}
           <Route path="/*" element={
