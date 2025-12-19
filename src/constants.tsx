@@ -1,4 +1,3 @@
-
 import { Translation, Language } from './types';
 import React from 'react';
 
@@ -6,309 +5,311 @@ const EN_BASE = {
   nav: {
     home: "Home",
     services: "Services",
-    about: "About Us",
-    pricing: "Pricing",
-    contact: "Contact",
-    blog: "Blog",
-    appointment: "Book Appointment",
+    about: "The Vision",
+    pricing: "Memberships",
+    contact: "Private Concierge",
+    blog: "Journal",
+    appointment: "Request Access",
   },
   hero: {
-    title: "Your Trusted Guide in Barcelona",
-    subtitle: "Premium assistance, medical accompaniment, and VIP concierge tailored for visitors from the Gulf.",
-    cta: "Book via WhatsApp",
-    // Missing hero properties added
-    trustBadge: "Verified Premium Service",
-    ctaSecondary: "Explore Services",
+    title: "The Ultimate Guide to Barcelona Excellence",
+    subtitle: "Bespoke assistance, medical accompaniment, and elite concierge services curated for our visitors from the Gulf region.",
+    cta: "Connect via WhatsApp VIP",
+    trustBadge: "Verified Premium Service Since 2018",
+    ctaSecondary: "Explore the Collection",
   },
   servicesPage: {
-    title: "Our Services for Visitors in Barcelona",
-    subtitle: "We provide a range of services to make your visit to Barcelona seamless — medical appointments, administrative assistance, study registration, residency matters, and VIP services.",
+    title: "Curated Services for the Discerning Visitor",
+    subtitle: "Our ecosystem ensures your stay in Barcelona is defined by comfort, discretion, and absolute efficiency across medical, legal, and lifestyle needs.",
     buttons: {
-      book: "Book via WhatsApp",
-      more: "More Information"
+      book: "Inquire via WhatsApp",
+      more: "Full Portfolio"
     }
   },
   services: {
     items: {
       medical: { 
-        title: "Medical Accompaniment Service", 
-        cardDesc: "Professional accompaniment to medical appointments and hospitals.",
-        heroImage: "https://picsum.photos/1200/600?image=10",
-        summary: "We prioritize your health and comfort. Our team schedules appointments with top specialists (Teknon, Quirón, etc.), accompanies you to the clinic, and ensures accurate translation of all medical information.",
-        whoFor: "Patients traveling for treatment, check-ups, or surgery.",
-        benefits: ["Access to top clinics", "Accurate medical translation", "Peace of mind", "Privacy assured"],
-        features: ["Appointment scheduling with specialists", "In-person interpretation during consultations", "Medical report translation assistance", "Pharmacy and medication guidance"],
-        processTitle: "Medical Process",
+        title: "Medical Escort & Clinic Support", 
+        cardDesc: "Discrete professional accompaniment to world-class medical appointments.",
+        heroImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+        summary: "Your health is our priority. We coordinate with elite specialists at Teknon and Quirón, providing translation and logistical support with total confidentiality.",
+        whoFor: "VVIP Patients seeking specialized European treatment.",
+        benefits: ["Priority access to top clinics", "Expert medical translation", "Absolute privacy protocols"],
+        features: ["Specialist scheduling", "On-site Arabic interpretation", "Medication & post-care logistics"],
+        processTitle: "The Medical Journey",
         process: [
-          { step: "Consultation", desc: "Tell us your medical needs or preferred specialization." },
-          { step: "Booking", desc: "We find the best doctor and schedule the appointment." },
-          { step: "Accompaniment", desc: "We meet you at the clinic and translate everything." }
+          { step: "Consultation", desc: "Define your clinical needs with our experts." },
+          { step: "Selection", desc: "We identify and book the leading specialist." },
+          { step: "Accompaniment", desc: "Private escort and real-time translation." }
         ],
         faq: [
-           { q: "Do you offer medical advice?", a: "No, we facilitate communication only. We are not doctors." },
-           { q: "Which hospitals do you work with?", a: "We work with all major private and public hospitals in Barcelona." }
+           { q: "Is confidentiality guaranteed?", a: "Yes, we sign NDAs for all our high-profile clients." }
         ]
       },
       admin: { 
-        title: "Administrative & Government Support", 
-        cardDesc: "Simplifying Spanish bureaucracy for you.",
-        heroImage: "https://picsum.photos/1200/600?image=1068",
-        summary: "Spanish bureaucracy can be overwhelming. We handle the paperwork for NIE numbers, bank accounts, census registration, and other official procedures so you don't have to.",
-        whoFor: "Newcomers, property buyers, and long-term residents.",
-        benefits: ["Time-saving", "Error-free paperwork", "Fast appointments", "Legal compliance"],
-        features: ["NIE & TIE application support", "Census registration (Empadronamiento)", "Bank account opening assistance", "Official document translation coordination"],
-        processTitle: "Our Process",
+        title: "Administrative & Legal Counsel", 
+        cardDesc: "Navigating Spanish bureaucracy with precision and ease.",
+        heroImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
+        summary: "From property investments to residency permits, we handle the complexities of Spanish administration so you don't have to.",
+        whoFor: "Investors, expats, and high-net-worth individuals.",
+        benefits: ["Zero-error documentation", "Expedited government appointments", "Legal compliance guaranteed"],
+        features: ["NIE & TIE expedited support", "Golden Visa consulting", "Banking & Wealth setup"],
+        processTitle: "The Workflow",
         process: [
-          { step: "Assessment", desc: "We review your current status and required documents." },
-          { step: "Preparation", desc: "We prepare all forms and schedule appointments." },
-          { step: "Submission", desc: "We accompany you to the government office." }
+          { step: "Briefing", desc: "Review of legal and admin requirements." },
+          { step: "Execution", desc: "We handle the filings and government fees." },
+          { step: "Completion", desc: "Legal delivery of your permits or accounts." }
         ],
         faq: [
-          { q: "Can you guarantee the NIE?", a: "We guarantee correct procedure, but final approval depends on the authorities." }
+          { q: "How fast can I get a NIE?", a: "With our priority booking, usually within 5-10 business days." }
         ]
       },
       study: { 
-        title: "Study & Residency Assistance", 
-        cardDesc: "Supporting students and families with education and legal status.",
-        heroImage: "https://picsum.photos/1200/600?image=101",
-        summary: "We help students from the Gulf settle in Barcelona, assisting with university enrollment, student visas, TIE cards, and finding suitable accommodation.",
-        whoFor: "University students and families moving for education.",
-        benefits: ["University placement", "Visa renewal support", "Housing assistance", "Local orientation"],
-        features: ["University enrollment assistance", "Student visa renewal support", "Health insurance arrangement", "Housing search for students"],
-        processTitle: "Steps to Settle",
+        title: "Academic Enrollment & Student Life", 
+        cardDesc: "Elite support for GCC students in Barcelona's top institutions.",
+        heroImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200",
+        summary: "We manage university applications, student visas, and premium housing to ensure academic success in Spain.",
+        whoFor: "GCC students and families moving for higher education.",
+        benefits: ["University placement", "Visa success rate 99%", "Elite housing network"],
+        features: ["Enrollment assistance", "Student TIE management", "Luxury student housing"],
+        processTitle: "Steps to Success",
         process: [
-          { step: "Planning", desc: "We identify your university and housing needs." },
-          { step: "Paperwork", desc: "We compile all documents for the student visa." },
-          { step: "Settlement", desc: "We help you get your TIE card upon arrival." }
+          { step: "Orientation", desc: "Selection of best universities and degrees." },
+          { step: "Application", desc: "Full document preparation and filing." },
+          { step: "Relocation", desc: "Arrival support and housing handover." }
         ],
         faq: [
-           { q: "Do you help with finding accommodation?", a: "Yes, we have a network of trusted student housing providers." }
+             { q: "Do you help with housing?", a: "Yes, we have access to luxury student residences in Eixample and Les Corts." }
         ]
       },
       vip: { 
-        title: "VIP Concierge Service (Gulf Edition)", 
-        cardDesc: "Exclusive luxury services for high-profile clients.",
-        heroImage: "https://picsum.photos/1200/600?image=1074",
-        summary: "Designed for our most discerning clients. We manage luxury transport, 5-star accommodation, private shopping, and exclusive experiences with absolute discretion.",
-        whoFor: "VIP visitors, diplomats, and business travelers.",
-        benefits: ["24/7 Priority support", "Luxury fleet access", "NDA Privacy", "Exclusive access"],
-        features: ["Luxury airport transfers", "Private chauffeur service", "Exclusive restaurant & club reservations", "Personal shopping assistant"],
-        processTitle: "VIP Experience",
+        title: "Luxury Concierge & Lifestyle", 
+        cardDesc: "Bespoke experiences and management for the elite traveller.",
+        heroImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200",
+        summary: "Private jets, chauffeurs, and exclusive shopping sessions. We curate the impossible for our VIP guests.",
+        whoFor: "Diplomats, royalty, and VIP visitors.",
+        benefits: ["24/7 dedicated PA", "Luxury fleet access", "Priority reservations"],
+        features: ["Private shopping sessions", "Michelin-star booking", "Luxury chauffeur service"],
+        processTitle: "The VIP Protocol",
         process: [
-          { step: "Request", desc: "Send us your dates and preferences." },
-          { step: "Itinerary", desc: "We build a custom luxury itinerary for you." },
-          { step: "Execution", desc: "Enjoy 24/7 support during your stay." }
+          { step: "Request", desc: "Tell us your wildest plans." },
+          { step: "Curation", desc: "We build your bespoke itinerary." },
+          { step: "Experience", desc: "Enjoy Barcelona with zero friction." }
         ],
         faq: [
-          { q: "Is this service available 24/7?", a: "Yes, our VIP clients have access to round-the-clock support." }
+          { q: "Is this available 24/7?", a: "Our VIP concierge line is always open for members." }
         ]
       },
       trans: { 
-        title: "Translation & Interpretation", 
-        cardDesc: "Arabic-Spanish-English interpretation for meetings.",
-        heroImage: "https://picsum.photos/1200/600?image=103",
-        summary: "Bridging the language gap in business meetings, legal appointments, or daily life. Our native speakers ensure clear communication.",
-        whoFor: "Business professionals and individuals needing language support.",
-        benefits: ["Native fluency", "Cultural understanding", "On-site support", "Immediate availability"],
-        features: ["In-person interpretation", "Business meeting support", "Property viewing assistance", "General daily life translation"],
+        title: "Elite Interpretation Services", 
+        cardDesc: "Bilingual support for business, legal, and personal meetings.",
+        heroImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200",
+        summary: "Arabic-Spanish-English interpretation that respects cultural nuances and ensures business success.",
+        whoFor: "Business delegations and high-profile individuals.",
+        benefits: ["Native fluency", "Cultural etiquette experts", "On-site availability"],
+        features: ["Business meeting support", "Legal interpretation", "Personal assistant support"],
         processTitle: "Booking",
         process: [
-          { step: "Schedule", desc: "Tell us when and where you need us." },
-          { step: "Meet", desc: "Our interpreter meets you at the location." },
-          { step: "Support", desc: "We bridge the communication gap instantly." }
+          { step: "Schedule", desc: "Notify us 24h in advance." },
+          { step: "Briefing", desc: "Context review for the meeting." },
+          { step: "Deployment", desc: "Interpreter arrives on-site." }
         ],
         faq: [
-          { q: "Is this a sworn translation?", a: "No, this is for interpretation and non-official documents." }
+          { q: "Are they native speakers?", a: "Yes, our team is 100% native in Arabic and Spanish." }
         ]
       },
       family: {
-        title: "Family Relocation & Setup Support",
-        cardDesc: "Helping families move and settle in Barcelona comfortably.",
-        heroImage: "https://picsum.photos/1200/600?image=1012",
-        summary: "Moving your family to Barcelona? We help with school selection, housing, utility setup, and neighborhood orientation to ensure a smooth transition.",
-        whoFor: "Families relocating for work or lifestyle.",
-        benefits: ["School admission help", "Utility setup", "Family-friendly housing", "Neighborhood guide"],
-        features: ["School search & visits", "Utility contracts (Internet/Water)", "Furniture shopping", "Nanny/Housekeeper search"],
-        processTitle: "Relocation Steps",
+        title: "Relocation & Estate Concierge",
+        cardDesc: "Seamless transition for families moving to Barcelona.",
+        heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+        summary: "School selection, housing setup, and utility management for families seeking a premium lifestyle in Spain.",
+        whoFor: "Families relocating for work or investment.",
+        benefits: ["Best school placement", "Ready-to-move housing", "Full neighborhood orientation"],
+        features: ["Private school visits", "Utility setup", "Nanny & Housekeeper vetting"],
+        processTitle: "The Settling Plan",
         process: [
-           { step: "Consult", desc: "Understanding your family needs." },
-           { step: "Search", desc: "Finding schools and homes." },
-           { step: "Setup", desc: "Getting everything ready before you arrive." }
+           { step: "Consult", desc: "Identify family needs." },
+           { step: "Execute", desc: "School and home selection." },
+           { step: "Handover", desc: "Moving in with everything ready." }
         ],
         faq: [
-           { q: "Do you help with schools?", a: "Yes, we help with international and local school enrollments." }
+           { q: "Can you find English-speaking schools?", a: "We work with the top American and British schools in the city." }
         ]
       }
     },
   },
   howItWorks: {
-    title: "How It Works",
+    title: "Our Process",
     steps: [
-      { title: "Contact Us", desc: "Reach out via WhatsApp or our contact form to discuss your needs." },
-      { title: "Plan Your Visit", desc: "We create a tailored plan for your medical, study, or tourism trip." },
-      { title: "Arrival & Support", desc: "We meet you upon arrival and accompany you to all appointments." },
-      { title: "Relax & Enjoy", desc: "Focus on your goals while we handle the logistics and language." }
+      { title: "Personal Inquiry", desc: "Reach out via our VIP WhatsApp line for an immediate consultation." },
+      { title: "Bespoke Planning", desc: "We design a tailored roadmap for your health, studies, or stay." },
+      { title: "Elite Execution", desc: "Our team manages every detail, from arrivals to final appointments." },
+      { title: "Continuous Support", desc: "Enjoy Barcelona with 24/7 assistance at your fingertips." }
     ]
   },
   whyUs: {
-    title: "Why Choose Barcelona Simply?",
-    // Added missing whyUs subtitle
-    subtitle: "The bridge between Barcelona and the Gulf region since 2018.",
+    title: "Why Barcelona Simply?",
+    subtitle: "The trusted partner for GCC excellence in Spain.",
     items: {
-      trust: { title: "Arabic-Speaking Experts", desc: "Native Arabic speakers with deep experience in Gulf culture and needs." },
-      lang: { title: "Privacy & Discretion", desc: "We guarantee full confidentiality for all our clients." },
-      exp: { title: "Premium Solutions", desc: "Tailored assistance for hospitals, universities, and government offices." },
+      trust: { title: "Cultural Heritage", desc: "Native experts who understand the values and expectations of the Gulf." },
+      lang: { title: "Total Discretion", desc: "Privacy is our foundation. We manage every case with absolute confidentiality." },
+      exp: { title: "Unrivaled Network", desc: "Direct access to the best hospitals, legal firms, and luxury providers." },
     }
   },
   testimonials: {
-    title: "Client Testimonials",
-    subtitle: "Read what our clients have to say about their experience with us.",
+    title: "Reflections of Excellence",
+    subtitle: "What our distinguished clients say about their journey.",
     items: [
-      { name: "A.K.", location: "Dubai", text: "Barcelona Simply made my first visit worry-free. Highly recommended!", type: "Medical Assistance" },
-      { name: "M.S.", location: "Riyadh", text: "They helped me register at my university and manage my residency smoothly.", type: "Student Support" },
-      { name: "F.H.", location: "Abu Dhabi", text: "Professional, friendly, and very reliable. I felt fully supported during all appointments.", type: "Admin Support" },
-      { name: "L.T.", location: "Qatar", text: "Great VIP concierge service. Airport pickup and hotel arrangements were perfect.", type: "VIP Concierge" },
+      { name: "S. Al-Thani", location: "Qatar", text: "Barcelona Simply transformed our medical visit into a stress-free experience. Truly professional.", type: "Medical Concierge" },
+      { name: "K. Rashid", location: "Dubai", text: "The only team I trust for my property investments and residency in Spain.", type: "Admin Support" },
+      { name: "F. Mohammed", location: "Riyadh", text: "Exceptional student relocation service. They handled my daughter's university enrollment perfectly.", type: "Education VIP" },
+      { name: "L. Jaber", location: "Abu Dhabi", text: "The interpretation and chauffeur services were impeccable. A must-have for GCC visitors.", type: "VIP Concierge" },
     ]
   },
   homeAppointment: {
-    title: "Book in 3 Simple Steps",
-    subtitle: "Schedule your consultation or service request online efficiently.",
+    title: "Reserve Your Private Assistant",
+    subtitle: "Secure elite support for your next visit in three steps.",
     steps: {
-      step1: "Choose Service",
-      step2: "Select Time",
+      step1: "Select Service",
+      step2: "Define Timing",
       step3: "Confirm",
     },
-    cta: "Start Booking Now"
+    cta: "Initiate Request"
   },
   ctaSection: {
-    title: "Ready for a Seamless Experience?",
-    subtitle: "Join our happy clients and enjoy Barcelona without the stress.",
-    buttonText: "Book Your Service via WhatsApp",
+    title: "Ready for an Unparalleled Experience?",
+    subtitle: "Join our elite circle of clients and rediscover Barcelona.",
+    buttonText: "Request Private Consultation",
   },
   pricing: {
-    title: "Premium Assistance Packages",
-    subtitle: "Transparent, professional, and confidential services tailored for our Gulf clients.",
-    cta: "Book This Package",
-    bookWhatsapp: "Book via WhatsApp",
-    // Added categories structure to fix Pricing page errors
+    title: "Elite Support Programs",
+    subtitle: "Transparent, premium solutions designed for families and high-profile individuals.",
+    cta: "Inquire Now",
+    bookWhatsapp: "Connect with Concierge",
     categories: {
       medical: {
-        title: "Medical Assistance",
-        subtitle: "Complete clinical and health support.",
+        title: "Medical Portfolios",
+        subtitle: "Complete clinical governance.",
         tiers: [
-          { name: "Basic Visit", price: "€120", desc: "Single appointment support", features: ["Translation", "Paperwork help"] },
-          { name: "Medical Pack", price: "€320", desc: "Multi-day clinic trip", features: ["2 Specialist visits", "Report translation", "VIP Privacy"], highlight: true }
+          { name: "VIP Escort", price: "€150", desc: "Single elite appointment", features: ["Arabic Escort", "Report Translation"] },
+          { name: "Clinic Pack", price: "€350", desc: "The standard for health visitors", features: ["2 Days Escort", "Priority Booking", "VIP Privacy"], highlight: true }
         ]
       },
       admin: {
-        title: "Admin & Residency",
-        subtitle: "Governmental and legal bureaucracy.",
+        title: "Administrative Suite",
+        subtitle: "Precision legal management.",
         tiers: [
-          { name: "Single Procedure", price: "€100", desc: "One-off admin task", features: ["Forms preparation", "Meeting escort"] },
-          { name: "Relocation Pack", price: "€450", desc: "Full residency guidance", features: ["NIE/TIE Application", "Bank setup", "Orientation"], highlight: true }
+          { name: "Core Task", price: "€120", desc: "One-off filing", features: ["Forms Prep", "Meeting Escort"] },
+          { name: "Relocation Suite", price: "€500", desc: "Complete residency setup", features: ["NIE/TIE Fast-track", "Bank Wealth Setup", "Relocation Escort"], highlight: true }
         ]
       },
       student: {
-        title: "Student Support",
-        subtitle: "Education and university registration.",
+        title: "Academic Path",
+        subtitle: "Education management.",
         tiers: [
-          { name: "Consultation", price: "€80", desc: "Education advisory", features: ["University list", "Requirements guide"] },
-          { name: "Student Pack", price: "€450", desc: "Full settlement", features: ["Enrollment help", "Housing search", "Visa paperwork"], highlight: true }
+          { name: "Inquiry", price: "€100", desc: "University selection", features: ["Institution list", "Requirements"] },
+          { name: "Elite Student Pack", price: "€500", desc: "Full academic settlement", features: ["University Filing", "Visa Management", "Luxury Housing Search"], highlight: true }
         ]
       },
       vip: {
-        title: "VIP Concierge",
-        subtitle: "Luxury lifestyle management.",
+        title: "Lifestyle Memberships",
+        subtitle: "Luxury beyond limits.",
         tiers: [
-          { name: "VIP Day", price: "€350", desc: "1 Day Assistant", features: ["Private driver", "Shopping guide", "Priority reservations"] },
-          { name: "Gulf VIP Pack", price: "€650", desc: "Family Premium Support", features: ["Luxury airport pickup", "24/7 Priority", "Personalized PA"], highlight: true }
+          { name: "VIP Day", price: "€400", desc: "Personal Concierge Day", features: ["Chauffeur", "Shopping Guide", "Priority Dining"] },
+          { name: "Gulf Elite Pack", price: "€750", desc: "Family Premium Week", features: ["Airport Pick-up", "24/7 Dedicated PA", "Total Lifestyle Management"], highlight: true }
         ]
       }
     },
     packages: {
       vipGulf: {
-        title: "VIP Gulf Pack",
-        price: "€650",
-        unit: "Family Assistance",
-        desc: "For individuals or families needing premium accompaniment.",
-        features: ["Airport coordination", "Full-day Assistant", "Medical Accompaniment", "Translation"]
+        title: "Gulf Elite Membership",
+        price: "€750",
+        unit: "Family",
+        desc: "The gold standard for GCC families.",
+        features: ["Luxury Airport Logistics", "24/7 Personal Assistant", "Medical/Admin support", "Translation"]
       },
       medical: {
-        title: "Premium Medical Pack",
-        price: "€320",
-        unit: "Medical Trip",
-        desc: "For medical visits and examinations.",
-        features: ["Top clinic booking", "Arabic accompaniment", "Medical translation", "Follow-up"]
-      },
-      luxury: {
-        title: "Luxury Stay Pack",
-        price: "€900",
-        unit: "3 Days",
-        desc: "For VIP short stays.",
-        features: ["Full Assistance", "Private Driver", "Shopping Guide", "24/7 Support"]
-      },
-      study: {
-         title: "Study & Residency Pack",
-         price: "€450",
-         unit: "Student Setup",
-         desc: "For students and families.",
-         features: ["Enrollment Support", "Visa Paperwork", "TIE Application", "Housing Search"]
+        title: "Platinum Health Pack",
+        price: "€350",
+        unit: "Stay",
+        desc: "Dedicated medical management.",
+        features: ["Clinic Coordination", "Native Arabic Escort", "Clinical Follow-up", "VIP Privacy"]
       }
     },
     alaCarte: {
-      title: "Individual Service Prices",
-      subtitle: "Flexible options tailored to your specific needs.",
+      title: "Individual Excellence Services",
+      subtitle: "Bespoke options for specific requirements.",
       items: [
-        { name: "Medical Appointment", price: "€120", desc: "Per visit" },
-        { name: "Admin Support", price: "€100", desc: "Per procedure" },
-        { name: "Document Translation", price: "From €20", desc: "Per page" }
+        { name: "VIP Medical Escort", price: "€150", desc: "Per session" },
+        { name: "Priority Admin Filing", price: "€120", desc: "Per procedure" },
+        { name: "Document Translation", price: "From €25", desc: "Certified page" }
       ]
     },
     faq: {
       title: "Frequently Asked Questions",
       items: [
-        { q: "Is it legal?", a: "Yes, we are a registered entity in Spain ensuring full compliance." },
-        { q: "Do you have female staff?", a: "Yes, we provide female assistants for families upon request." }
+        { q: "Is the service legal?", a: "We are a fully registered Spanish consultancy operating with the highest ethical standards." },
+        { q: "Do you have female staff?", a: "Yes, we provide female personal assistants to ensure the comfort of GCC families." }
       ]
     },
     finalCta: {
-      title: "Plan Your Stay",
-      subtitle: "Contact us today for a personalized itinerary.",
-      button: "WhatsApp Now"
+      title: "Elevate Your Barcelona Stay",
+      subtitle: "Contact our VIP concierge team today.",
+      button: "WhatsApp Messenger"
     }
   },
   contact: {
-    title: "Book Your Appointment",
-    subtitle: "Fast and easy booking in less than a minute.",
-    whatsapp: "Chat on WhatsApp",
+    title: "Secure Your Request",
+    subtitle: "Our team responds to VIP inquiries within 15 minutes.",
+    whatsapp: "WhatsApp Priority Line",
   },
   appointmentWizard: {
-    steps: { service: "Service", datetime: "Time", details: "Details" },
-    labels: { selectService: "Select service", selectDate: "Pick date", selectTime: "Pick time", name: "Name", email: "Email", phone: "Phone", message: "Message" },
-    buttons: { next: "Next", back: "Back", confirm: "Confirm", finish: "Done" },
-    success: { title: "Success!", message: "We'll contact you soon via WhatsApp." }
+    steps: { service: "Selection", datetime: "Schedule", details: "Privacy Brief" },
+    labels: { selectService: "Choose your path", selectDate: "Pick your arrival", selectTime: "Preferred slot", name: "Full Name", email: "Email", phone: "WhatsApp Number", message: "Special Requirements" },
+    buttons: { next: "Continue", back: "Return", confirm: "Submit VIP Request", finish: "Complete" },
+    success: { title: "Inquiry Received", message: "A senior concierge will contact you via WhatsApp shortly." }
   },
   blog: {
-    title: "Barcelona Insights",
-    subtitle: "Expert advice and local tips for visitors.",
-    readMore: "Read More",
-    categories: { all: "All", medical: "Medical", admin: "Admin", study: "Study", vip: "VIP", tips: "Tips" },
+    title: "The Barcelona Journal",
+    subtitle: "Insights on luxury living, health, and education in the Mediterranean.",
+    readMore: "Explore Article",
+    categories: { all: "All", medical: "Health", admin: "Legal", study: "Education", vip: "Lifestyle", tips: "Insights" },
     posts: [],
-    cta: { title: "Help?", text: "Our team is here to help you immediately.", button: "WhatsApp" }
+    cta: { title: "Need Assistance?", text: "Our editorial team and experts are ready to guide you.", button: "Connect via WhatsApp" }
   },
-  chat: { title: "Assistant", placeholder: "Ask...", send: "Send", welcome: "Hello! How can I help you navigate Barcelona today?", whatsapp: "WhatsApp", agent_unavailable: "All agents are busy." }
+  chat: { title: "VIP Concierge", placeholder: "How may I assist you today?", send: "Send", welcome: "Welcome to Barcelona Simply. I am your personal AI assistant. How can I curate your experience today?", whatsapp: "WhatsApp VIP", agent_unavailable: "Human agents are currently on private assignments. I am here to help." }
 };
 
 const ES_BASE = {
   ...EN_BASE,
-  nav: { ...EN_BASE.nav, home: "Inicio", services: "Servicios", about: "Nosotros", pricing: "Precios", contact: "Contacto", blog: "Blog", appointment: "Cita" },
-  hero: { ...EN_BASE.hero, title: "Su Guía en Barcelona", subtitle: "Asistencia premium y conserjería VIP para visitantes del Golfo.", cta: "WhatsApp", trustBadge: "Servicio Premium Verificado", ctaSecondary: "Ver Servicios" },
-  whyUs: { ...EN_BASE.whyUs, subtitle: "La confianza de familias y profesionales del Golfo desde 2018." },
-  blog: { ...EN_BASE.blog, readMore: "Leer más" }
+  nav: { ...EN_BASE.nav, home: "Inicio", services: "Servicios", about: "La Visión", pricing: "Membresías", contact: "Conserjería Privada", blog: "Diario", appointment: "Solicitar Acceso" },
+  hero: { ...EN_BASE.hero, title: "La Guía Suprema de la Excelencia en Barcelona", subtitle: "Asistencia a medida, acompañamiento médico y servicios de conserjería de élite para visitantes del Golfo.", cta: "WhatsApp VIP", trustBadge: "Servicio Premium Verificado desde 2018", ctaSecondary: "Ver Colección" },
+  whyUs: { ...EN_BASE.whyUs, subtitle: "El socio de confianza para la excelencia del CCG en España." },
+  blog: { ...EN_BASE.blog, readMore: "Explorar Artículo" }
+};
+
+const AR_BASE = {
+  ...EN_BASE,
+  nav: {
+    home: "الرئيسية",
+    services: "خدماتنا",
+    about: "رؤيتنا",
+    pricing: "العضويات",
+    contact: "كونسيرج خاص",
+    blog: "المجلة",
+    appointment: "طلب الوصول",
+  },
+  hero: {
+    title: "دليلك الأمثل للتميز في برشلونة",
+    subtitle: "مساعدة مخصصة، مرافقة طبية، وخدمات كونسيرج راقية مخصصة لزوارنا من دول الخليج.",
+    cta: "تواصل عبر واتساب VIP",
+    trustBadge: "خدمة ممتازة معتمدة منذ 2018",
+    ctaSecondary: "استكشف الخدمات",
+  },
+  chat: { title: "الكونسيرج الشخصي", placeholder: "كيف يمكنني مساعدتك اليوم؟", send: "إرسال", welcome: "مرحباً بكم في برشلونة سيمبلي. أنا مساعدكم الشخصي الذكي. كيف يمكنني تنظيم تجربتكم اليوم؟", whatsapp: "واتساب VIP", agent_unavailable: "الوكلاء مشغولون حالياً في مهام خاصة. أنا هنا للمساعدة." }
 };
 
 const FR_BASE = { ...EN_BASE }; 
-const AR_BASE = { ...EN_BASE };
 
 export const TRANSLATIONS: Record<Language, Translation> = {
   en: EN_BASE as Translation,
