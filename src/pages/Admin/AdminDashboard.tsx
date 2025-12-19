@@ -49,20 +49,21 @@ const AdminDashboard: React.FC = () => {
     try {
       const ai = new GoogleGenAI({ apiKey });
       
-      // PASO 1: INVESTIGACIÓN Y REDACCIÓN
-      setGenStep('🔍 Investigando en Google Search y redactando contenido real...');
+      setGenStep('🔍 Realizando investigación profunda con Google Search y Maps...');
+      
       const writerResponse = await ai.models.generateContent({
         model: 'gemini-3-pro-preview',
-        contents: [{ parts: [{ text: `Escribe un artículo SEO de autoridad sobre "${aiTopic}" para Barcelona Simply. 
-        REGLAS: 
-        1. Usa la herramienta de búsqueda para validar leyes actuales de extranjería o servicios médicos en Barcelona.
-        2. Genera versiones en: FR, AR, ES, EN.
-        3. Mínimo 900 palabras.
-        4. Incluye JSON-LD para Google (Schema Article).
-        5. Crea un prompt artístico detallado para una imagen hero de este post.
-        6. Tono: Concierge de lujo, fiable y experto.` }] }],
+        contents: [{ parts: [{ text: `Escribe un artículo SEO de máxima autoridad sobre "${aiTopic}" para Barcelona Simply. 
+        INSTRUCCIONES CRÍTICAS: 
+        1. Usa Google Search para validar leyes y servicios actuales en 2025.
+        2. Usa Google Maps para identificar al menos 3 ubicaciones reales (hospitales, notarías o escuelas) y añade sus enlaces de Google Maps en el contenido.
+        3. Genera versiones perfectas en: FR, AR, ES, EN.
+        4. Longitud: 900+ palabras por idioma con estructura H1, H2, H3.
+        5. Incluye JSON-LD Schema.org completo.
+        6. Define un prompt artístico de alta gama para la imagen del post.
+        7. El tono debe ser de extrema confianza y hospitalidad árabe.` }] }],
         config: {
-          tools: [{ googleSearch: {} }],
+          tools: [{ googleSearch: {} }, { googleMaps: {} }],
           responseMimeType: "application/json",
           responseSchema: {
             type: Type.OBJECT,
@@ -79,11 +80,10 @@ const AdminDashboard: React.FC = () => {
       const result = JSON.parse(writerResponse.text) as GeneratedArticle;
       setPreviewArticle(result);
 
-      // PASO 2: GENERACIÓN DE IMAGEN ÚNICA
-      setGenStep('🎨 Creando imagen fotorrealista personalizada...');
+      setGenStep('🎨 Generando arte editorial único...');
       const imgResponse = await ai.models.generateContent({
         model: 'gemini-2.5-flash-image',
-        contents: [{ parts: [{ text: `Photography, high-end travel style, Barcelona location, professional lighting: ${result.en.imagePrompt}` }] }],
+        contents: [{ parts: [{ text: `Professional commercial photography, high-end travel and lifestyle, Barcelona architecture background, warm elegant tones: ${result.en.imagePrompt}` }] }],
         config: { imageConfig: { aspectRatio: "16:9", imageSize: "1K" } }
       });
 
@@ -94,9 +94,10 @@ const AdminDashboard: React.FC = () => {
         }
       }
 
-      setGenStep('✅ ¡Listo! Revise y publique abajo.');
+      setGenStep('✅ Guía generada con éxito.');
     } catch (e: any) {
-      alert(`Error: ${e.message}`);
+      console.error(e);
+      alert(`Error en generación: ${e.message}`);
     } finally {
       setIsGenerating(false);
     }
@@ -108,114 +109,157 @@ const AdminDashboard: React.FC = () => {
     const updated = { ...translations };
     (['en', 'fr', 'ar', 'es'] as const).forEach(lang => {
       const v = previewArticle[lang];
-      const newPost: BlogPost = {
-        id: `ai_${Date.now()}_${lang}`,
-        slug: v.slug,
-        title: v.title,
-        excerpt: v.metaDesc,
-        category: 'tips',
-        image: generatedImg,
-        date: new Date().toLocaleDateString(),
-        author: 'Barcelona Simply Editorial',
-        jsonLd: v.jsonLd,
-        content: {
-          intro: v.content.split('\n')[0],
-          sections: [{ title: "Guía Premium", content: v.content }],
-          conclusion: "Barcelona Simply: Su confianza es nuestra prioridad."
-        }
-      };
-      updated[lang].blog.posts = [newPost, ...updated[lang].blog.posts];
+      if (updated[lang]) {
+        const newPost: BlogPost = {
+          id: `ai_${Date.now()}_${lang}`,
+          slug: v.slug,
+          title: v.title,
+          excerpt: v.metaDesc,
+          category: 'tips',
+          image: generatedImg,
+          date: new Date().toLocaleDateString(),
+          author: 'Barcelona Simply Editorial',
+          jsonLd: v.jsonLd,
+          content: {
+            intro: v.content.split('\n')[0],
+            sections: [{ title: "Guía de Experto", content: v.content }],
+            conclusion: "Barcelona Simply: Su tranquilidad, nuestra misión."
+          }
+        };
+        if (!updated[lang].blog.posts) updated[lang].blog.posts = [];
+        updated[lang].blog.posts = [newPost, ...updated[lang].blog.posts];
+      }
     });
 
     updateTranslations(updated);
-    alert('Publicado globalmente.');
+    alert('Publicado globalmente en todos los idiomas.');
     setPreviewArticle(null);
   };
 
   return (
     <div className="flex h-screen bg-slate-100 font-sans overflow-hidden">
-      {/* Side Nav */}
-      <div className="w-80 bg-navy-950 text-white flex flex-col shrink-0">
-        <div className="p-10 border-b border-white/10">
-          <h1 className="text-2xl font-black">BS <span className="text-gold-500">PRO</span></h1>
-          <p className="text-[10px] text-slate-500 uppercase font-black mt-1">SEO Engine v3.0</p>
+      {/* Sidebar de Gestión Pro */}
+      <div className="w-80 bg-navy-950 text-white flex flex-col shrink-0 shadow-2xl">
+        <div className="p-10 border-b border-white/5">
+          <div className="flex items-center gap-3">
+             <div className="w-8 h-8 bg-gold-500 rounded flex items-center justify-center text-navy-950 font-black">B</div>
+             <h1 className="text-xl font-black tracking-tight">BS <span className="text-gold-500 uppercase">Pro</span></h1>
+          </div>
+          <p className="text-[9px] text-slate-500 uppercase font-black mt-2 tracking-widest">Global SEO Management</p>
         </div>
-        <nav className="p-6 space-y-2">
-          {['content', 'seo', 'ai-writer'].map((tab) => (
-            <button 
-              key={tab}
-              onClick={() => setActiveTab(tab as any)}
-              className={`w-full text-left px-6 py-4 rounded-2xl font-bold capitalize transition-all ${activeTab === tab ? 'bg-gold-500 text-navy-900 shadow-xl scale-105' : 'text-slate-400 hover:bg-white/5'}`}
-            >
-              {tab.replace('-', ' ')}
-            </button>
-          ))}
+        <nav className="p-6 space-y-2 flex-grow">
+          <button 
+            onClick={() => setActiveTab('content')}
+            className={`w-full text-left px-6 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all ${activeTab === 'content' ? 'bg-white/10 text-gold-500' : 'text-slate-400 hover:bg-white/5'}`}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+            Textos Estáticos
+          </button>
+          <button 
+            onClick={() => setActiveTab('seo')}
+            className={`w-full text-left px-6 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all ${activeTab === 'seo' ? 'bg-white/10 text-gold-500' : 'text-slate-400 hover:bg-white/5'}`}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            SEO Global
+          </button>
+          <button 
+            onClick={() => setActiveTab('ai-writer')}
+            className={`w-full text-left px-6 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all ${activeTab === 'ai-writer' ? 'bg-gold-500 text-navy-950 shadow-xl shadow-gold-500/20' : 'text-slate-400 hover:bg-white/5'}`}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+            Escritor IA Pro
+          </button>
         </nav>
+        <div className="p-8 border-t border-white/5">
+          <a href="/" className="text-xs font-bold text-slate-500 hover:text-white flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Cerrar Sesión
+          </a>
+        </div>
       </div>
 
-      {/* Content Area */}
-      <div className="flex-grow overflow-y-auto p-12">
+      {/* Main Panel */}
+      <div className="flex-grow overflow-y-auto p-12 bg-slate-100">
         {activeTab === 'ai-writer' && (
-          <div className="max-w-6xl mx-auto space-y-10">
-            <div className="bg-white rounded-[3rem] p-12 shadow-2xl border border-slate-200">
-              <h2 className="text-4xl font-black text-navy-900 mb-2">Escritor SEO Inteligente</h2>
-              <p className="text-slate-500 mb-10 text-lg">Investigación en tiempo real + Redacción multi-idioma + Arte IA.</p>
-              
-              <div className="space-y-6">
+          <div className="max-w-6xl mx-auto space-y-10 animate-fade-in-up">
+            <div className="bg-navy-900 rounded-[3rem] p-16 text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+              <div className="relative z-10">
+                <span className="bg-gold-500 text-navy-900 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Enterprise AI</span>
+                <h2 className="text-5xl font-black mb-4 tracking-tighter leading-tight">Generación de Contenido <br/> con Grounding de Ubicación</h2>
+                <p className="text-slate-400 max-w-2xl leading-relaxed text-xl font-light">
+                  Nuestra IA ahora integra Google Maps para validar puntos de interés y mejorar el SEO local de cada artículo.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-[3rem] shadow-2xl p-12 border border-slate-200 space-y-8">
+              <div className="space-y-4">
+                <label className="text-xs font-black text-slate-400 uppercase tracking-widest block ml-2">¿Sobre qué quieres que escriba?</label>
                 <input 
                   type="text" 
                   value={aiTopic}
                   onChange={e => setAiTopic(e.target.value)}
-                  placeholder="Ej: Requisitos de visado médico para ciudadanos de Kuwait 2025"
-                  className="w-full px-8 py-6 rounded-3xl border-2 border-slate-100 text-xl focus:border-gold-500 outline-none transition-all shadow-inner"
+                  placeholder="Ej: Acompañamiento en Hospital Teknon para pacientes de los Emiratos"
+                  className="w-full px-8 py-7 rounded-3xl border-2 border-slate-50 bg-slate-50 text-xl focus:border-gold-500 focus:bg-white outline-none transition-all shadow-inner font-medium placeholder:text-slate-300"
                 />
-                
-                <button 
-                  onClick={generateFullSEOArticle}
-                  disabled={isGenerating || !aiTopic}
-                  className="w-full bg-navy-900 text-white py-6 rounded-3xl font-black text-2xl hover:bg-gold-500 transition-all flex items-center justify-center gap-4 shadow-2xl disabled:opacity-50"
-                >
-                  {isGenerating ? "Procesando..." : "Generar Contenido de Autoridad"}
-                </button>
               </div>
+              
+              <button 
+                onClick={generateFullSEOArticle}
+                disabled={isGenerating || !aiTopic}
+                className="w-full bg-navy-950 text-white py-7 rounded-3xl font-black text-2xl hover:bg-gold-500 hover:text-navy-950 transition-all flex items-center justify-center gap-4 shadow-2xl disabled:opacity-50 group"
+              >
+                {isGenerating ? (
+                  <span className="flex items-center gap-3">
+                    <svg className="animate-spin h-7 w-7" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                    Generando Guía Global...
+                  </span>
+                ) : (
+                  <>
+                    <svg className="w-8 h-8 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20l-4-4m0-7A7 7 0 111 8a7 7 0 0114 0z" /></svg>
+                    Generar y Publicar con IA
+                  </>
+                )}
+              </button>
 
               {isGenerating && (
-                <div className="mt-8 flex items-center gap-4 p-6 bg-navy-50 rounded-2xl animate-pulse">
-                  <div className="w-6 h-6 border-4 border-gold-500 border-t-transparent rounded-full animate-spin"></div>
-                  <span className="font-bold text-navy-900">{genStep}</span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                   <div className="bg-navy-50 p-6 rounded-2xl border border-navy-100 flex items-center gap-3">
+                      <div className="w-2 h-2 bg-gold-500 rounded-full animate-ping"></div>
+                      <span className="text-xs font-bold text-navy-900">{genStep}</span>
+                   </div>
                 </div>
               )}
             </div>
 
             {previewArticle && generatedImg && (
               <div className="bg-white rounded-[3rem] p-12 shadow-2xl border border-slate-200 animate-fade-in-up space-y-10">
-                <div className="flex justify-between items-end">
+                <div className="flex justify-between items-center">
                    <div>
-                     <span className="text-xs font-black text-gold-600 uppercase tracking-widest">Previsualización de Calidad</span>
-                     <h3 className="text-3xl font-black text-navy-900 mt-2">¿Publicar ahora?</h3>
+                     <h3 className="text-3xl font-black text-navy-900">Previsualización de Publicación</h3>
+                     <p className="text-slate-500">Revisa cómo quedará el post en 4 idiomas.</p>
                    </div>
-                   <button onClick={publishArticle} className="bg-green-600 text-white px-10 py-4 rounded-2xl font-black shadow-xl hover:scale-105 transition-transform">Sí, publicar en 4 idiomas</button>
+                   <button onClick={publishArticle} className="bg-green-600 text-white px-12 py-5 rounded-2xl font-black shadow-xl hover:scale-105 hover:bg-green-700 transition-all">Aprobar y Publicar Todo</button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div className="space-y-4">
-                    <img src={generatedImg} className="w-full aspect-video object-cover rounded-3xl shadow-lg border-4 border-slate-100" alt="Generated" />
-                    <p className="text-xs text-slate-400 italic">Imagen generada específicamente para: "{previewArticle.en.imagePrompt}"</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video">
+                       <img src={generatedImg} className="w-full h-full object-cover" alt="IA Generated" />
+                       <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                       <div className="absolute bottom-6 left-6 right-6">
+                          <span className="bg-gold-500 text-navy-900 text-[10px] font-black px-3 py-1 rounded mb-2 inline-block">PREMIUM COVER</span>
+                          <h4 className="text-white font-bold text-xl">{previewArticle.es.title}</h4>
+                       </div>
+                    </div>
                   </div>
-                  <div className="bg-slate-50 p-8 rounded-3xl space-y-4 max-h-[400px] overflow-y-auto">
-                    <h4 className="font-black text-navy-900 text-xl">{previewArticle.es.title}</h4>
-                    <div className="prose prose-sm prose-slate" dangerouslySetInnerHTML={{ __html: previewArticle.es.content.substring(0, 500) + '...' }}></div>
+                  <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 max-h-[500px] overflow-y-auto prose prose-slate">
+                    <div dangerouslySetInnerHTML={{ __html: previewArticle.es.content.replace(/\n/g, '<br/>') }}></div>
                   </div>
                 </div>
               </div>
             )}
-          </div>
-        )}
-
-        {activeTab === 'content' && (
-          <div className="max-w-4xl mx-auto bg-white p-12 rounded-[3rem] shadow-xl">
-            <h2 className="text-3xl font-black mb-8">Editor Manual</h2>
-            <p className="text-slate-400">Seleccione idioma y edite textos estáticos.</p>
           </div>
         )}
       </div>
