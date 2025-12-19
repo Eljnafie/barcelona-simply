@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link, useLocation } from 'react-router-dom';
@@ -15,7 +16,6 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-               {/* Simple Logo Placeholder */}
                <div className="w-8 h-8 bg-gold-500 rounded-sm flex items-center justify-center text-navy-900 font-bold text-xl">
                  B
                </div>
@@ -32,21 +32,41 @@ const Navbar: React.FC = () => {
             <Link to="/about" className={isActive('/about')}>{t.nav.about}</Link>
             <Link to="/contact" className={isActive('/contact')}>{t.nav.contact}</Link>
             
-            {/* Appointment Button */}
             <Link to="/contact" className="bg-gold-500 text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gold-600 transition-colors shadow-md">
               {t.nav.appointment}
             </Link>
 
-            {/* Language Switcher */}
-            <div className="relative group ml-2 rtl:mr-2">
-              <button className="flex items-center text-slate-300 hover:text-white focus:outline-none">
-                <span className="uppercase font-semibold">{language}</span>
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+            {/* Language Switcher - FIXED HOVER AREA */}
+            <div className="relative group h-full flex items-center ml-2 rtl:mr-2">
+              <button className="flex items-center text-slate-300 group-hover:text-white focus:outline-none py-2">
+                <span className="uppercase font-semibold tracking-wider">{language}</span>
+                <svg className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
-              <div className="absolute right-0 rtl:left-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 hidden group-hover:block ring-1 ring-black ring-opacity-5">
-                <button onClick={() => setLanguage('en')} className="block w-full text-left rtl:text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                <button onClick={() => setLanguage('fr')} className="block w-full text-left rtl:text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</button>
-                <button onClick={() => setLanguage('ar')} className="block w-full text-left rtl:text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-arabic">العربية</button>
+              
+              {/* Contenedor invisible para cerrar el gap entre botón y menú */}
+              <div className="absolute right-0 rtl:left-0 top-full pt-2 w-32 hidden group-hover:block z-50 animate-fade-in-up">
+                <div className="bg-white rounded-xl shadow-2xl py-2 ring-1 ring-black ring-opacity-5 overflow-hidden">
+                  <button 
+                    onClick={() => setLanguage('en')} 
+                    className={`block w-full text-left rtl:text-right px-4 py-2 text-sm transition-colors ${language === 'en' ? 'bg-gold-50 text-gold-600 font-bold' : 'text-navy-900 hover:bg-slate-50'}`}
+                  >
+                    English
+                  </button>
+                  <button 
+                    onClick={() => setLanguage('fr')} 
+                    className={`block w-full text-left rtl:text-right px-4 py-2 text-sm transition-colors ${language === 'fr' ? 'bg-gold-50 text-gold-600 font-bold' : 'text-navy-900 hover:bg-slate-50'}`}
+                  >
+                    Français
+                  </button>
+                  <button 
+                    onClick={() => setLanguage('ar')} 
+                    className={`block w-full text-left rtl:text-right px-4 py-2 text-sm transition-colors font-arabic ${language === 'ar' ? 'bg-gold-50 text-gold-600 font-bold' : 'text-navy-900 hover:bg-slate-50'}`}
+                  >
+                    العربية
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -80,9 +100,9 @@ const Navbar: React.FC = () => {
             
             <div className="border-t border-navy-700 pt-4 pb-2 mt-2">
                <div className="flex justify-around">
-                  <button onClick={() => setLanguage('en')} className={`text-sm font-medium ${language === 'en' ? 'text-gold-500' : 'text-slate-300'}`}>EN</button>
-                  <button onClick={() => setLanguage('fr')} className={`text-sm font-medium ${language === 'fr' ? 'text-gold-500' : 'text-slate-300'}`}>FR</button>
-                  <button onClick={() => setLanguage('ar')} className={`text-sm font-medium font-arabic ${language === 'ar' ? 'text-gold-500' : 'text-slate-300'}`}>العربية</button>
+                  <button onClick={() => { setLanguage('en'); setIsOpen(false); }} className={`text-sm font-medium ${language === 'en' ? 'text-gold-500' : 'text-slate-300'}`}>EN</button>
+                  <button onClick={() => { setLanguage('fr'); setIsOpen(false); }} className={`text-sm font-medium ${language === 'fr' ? 'text-gold-500' : 'text-slate-300'}`}>FR</button>
+                  <button onClick={() => { setLanguage('ar'); setIsOpen(false); }} className={`text-sm font-medium font-arabic ${language === 'ar' ? 'text-gold-500' : 'text-slate-300'}`}>العربية</button>
                </div>
             </div>
           </div>
