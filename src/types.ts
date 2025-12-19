@@ -34,26 +34,16 @@ export interface BlogPost {
   author: string;
   seoTitle?: string;
   metaDesc?: string;
+  primaryKeyword?: string;
+  secondaryKeywords?: string[];
+  imageAlt?: string;
+  externalLink?: string;
+  jsonLd?: string; // Para Schema.org
   content: {
     intro: string;
     sections: { title: string; content: string | string[] }[];
     conclusion: string;
   };
-}
-
-// Added Pricing interfaces to support the new pricing structure used in the components
-export interface PricingTier {
-  name: string;
-  price: string;
-  desc: string;
-  features: string[];
-  highlight?: boolean;
-}
-
-export interface PricingCategory {
-  title: string;
-  subtitle: string;
-  tiers: PricingTier[];
 }
 
 export interface Translation {
@@ -70,7 +60,6 @@ export interface Translation {
     title: string;
     subtitle: string;
     cta: string;
-    // Added missing properties to fix src/pages/Home.tsx errors
     trustBadge: string;
     ctaSecondary: string;
   };
@@ -98,7 +87,6 @@ export interface Translation {
   };
   whyUs: {
     title: string;
-    // Added missing property to fix src/pages/Home.tsx error
     subtitle: string;
     items: {
       trust: { title: string; desc: string };
@@ -131,96 +119,25 @@ export interface Translation {
     subtitle: string;
     cta: string;
     bookWhatsapp: string;
-    // Added categories structure to fix src/pages/Pricing.tsx errors
-    categories: {
-      medical: PricingCategory;
-      admin: PricingCategory;
-      student: PricingCategory;
-      vip: PricingCategory;
-    };
-    packages: {
-      vipGulf: { title: string; price: string; unit: string; desc: string; features: string[] };
-      medical: { title: string; price: string; unit: string; desc: string; features: string[] };
-      luxury: { title: string; price: string; unit: string; desc: string; features: string[] };
-      study: { title: string; price: string; unit: string; desc: string; features: string[] };
-    };
-    alaCarte: {
-      title: string;
-      subtitle: string;
-      items: { name: string; price: string; desc: string }[];
-    };
-    faq: {
-      title: string;
-      items: { q: string; a: string }[];
-    };
-    finalCta: {
-      title: string;
-      subtitle: string;
-      button: string;
-    }
+    categories: Record<string, any>;
+    packages: Record<string, any>;
+    alaCarte: any;
+    faq: any;
+    finalCta: any;
   };
   contact: {
     title: string;
     subtitle: string;
     whatsapp: string;
   };
-  appointmentWizard: {
-    steps: {
-      service: string;
-      datetime: string;
-      details: string;
-    };
-    labels: {
-      selectService: string;
-      selectDate: string;
-      selectTime: string;
-      name: string;
-      email: string;
-      phone: string;
-      message: string;
-    };
-    buttons: {
-      next: string;
-      back: string;
-      confirm: string;
-      finish: string;
-    };
-    success: {
-      title: string;
-      message: string;
-    };
-  };
+  appointmentWizard: any;
   blog: {
     title: string;
     subtitle: string;
     readMore: string;
-    categories: {
-      all: string;
-      medical: string;
-      admin: string;
-      study: string;
-      vip: string;
-      tips: string;
-    };
+    categories: any;
     posts: BlogPost[];
-    cta: {
-      title: string;
-      text: string;
-      button: string;
-    }
+    cta: any;
   };
-  chat: {
-    placeholder: string;
-    title: string;
-    send: string;
-    welcome: string;
-    whatsapp: string;
-    agent_unavailable: string;
-  }
-}
-
-export interface ServiceItem {
-  id: string;
-  icon: React.ReactNode;
-  titleKey: keyof Translation['services']['items'];
+  chat: any;
 }
