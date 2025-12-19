@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export type Language = 'en' | 'fr' | 'ar';
+export type Language = 'en' | 'fr' | 'ar' | 'es';
 
 export interface SEOConfig {
   title: string;
@@ -15,7 +15,7 @@ export interface ServiceDetail {
   cardDesc: string;
   heroImage: string;
   summary: string;
-  whoFor: string; 
+  whoFor: string;
   benefits: string[];
   features: string[];
   processTitle: string;
@@ -32,8 +32,8 @@ export interface BlogPost {
   image: string;
   date: string;
   author: string;
-  seoTitle: string;
-  metaDesc: string;
+  seoTitle?: string;
+  metaDesc?: string;
   content: {
     intro: string;
     sections: { title: string; content: string | string[] }[];
@@ -41,6 +41,7 @@ export interface BlogPost {
   };
 }
 
+// Added Pricing interfaces to support the new pricing structure used in the components
 export interface PricingTier {
   name: string;
   price: string;
@@ -69,8 +70,9 @@ export interface Translation {
     title: string;
     subtitle: string;
     cta: string;
-    ctaSecondary: string;
+    // Added missing properties to fix src/pages/Home.tsx errors
     trustBadge: string;
+    ctaSecondary: string;
   };
   servicesPage: {
     title: string;
@@ -96,18 +98,18 @@ export interface Translation {
   };
   whyUs: {
     title: string;
+    // Added missing property to fix src/pages/Home.tsx error
     subtitle: string;
     items: {
       trust: { title: string; desc: string };
       lang: { title: string; desc: string };
       exp: { title: string; desc: string };
-      privacy: { title: string; desc: string };
     };
   };
   testimonials: {
     title: string;
     subtitle: string;
-    items: { name: string; location: string; text: string; type: string }[];
+    items: { name: string; location: string; text: string; type?: string }[];
   };
   homeAppointment: {
     title: string;
@@ -129,14 +131,22 @@ export interface Translation {
     subtitle: string;
     cta: string;
     bookWhatsapp: string;
+    // Added categories structure to fix src/pages/Pricing.tsx errors
     categories: {
       medical: PricingCategory;
       admin: PricingCategory;
       student: PricingCategory;
       vip: PricingCategory;
     };
+    packages: {
+      vipGulf: { title: string; price: string; unit: string; desc: string; features: string[] };
+      medical: { title: string; price: string; unit: string; desc: string; features: string[] };
+      luxury: { title: string; price: string; unit: string; desc: string; features: string[] };
+      study: { title: string; price: string; unit: string; desc: string; features: string[] };
+    };
     alaCarte: {
       title: string;
+      subtitle: string;
       items: { name: string; price: string; desc: string }[];
     };
     faq: {
@@ -153,7 +163,6 @@ export interface Translation {
     title: string;
     subtitle: string;
     whatsapp: string;
-    formTitle: string;
   };
   appointmentWizard: {
     steps: {
@@ -208,4 +217,10 @@ export interface Translation {
     whatsapp: string;
     agent_unavailable: string;
   }
+}
+
+export interface ServiceItem {
+  id: string;
+  icon: React.ReactNode;
+  titleKey: keyof Translation['services']['items'];
 }
