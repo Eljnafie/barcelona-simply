@@ -1,6 +1,14 @@
+
 import React from 'react';
 
 export type Language = 'en' | 'fr' | 'ar';
+
+export interface SEOConfig {
+  title: string;
+  description: string;
+  keywords: string;
+  ogImage: string;
+}
 
 export interface ServiceDetail {
   title: string;
@@ -24,8 +32,8 @@ export interface BlogPost {
   image: string;
   date: string;
   author: string;
-  seoTitle: string; // New SEO field
-  metaDesc: string; // New SEO field
+  seoTitle: string;
+  metaDesc: string;
   content: {
     intro: string;
     sections: { title: string; content: string | string[] }[];
@@ -200,10 +208,4 @@ export interface Translation {
     whatsapp: string;
     agent_unavailable: string;
   }
-}
-
-export interface ServiceItem {
-  id: string;
-  icon: React.ReactNode;
-  titleKey: keyof Translation['services']['items'];
 }
